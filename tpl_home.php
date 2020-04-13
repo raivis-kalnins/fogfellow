@@ -1,21 +1,15 @@
 <?php /* Template Name: Home Page TPL - PHP */ 
 	get_header();
 	$custom_logo_id = get_theme_mod('custom_logo'); 
-	$logo = wp_get_attachment_image_src($custom_logo_id,'full');
-	if( ! empty( $logo ) ) : 
-		$logo_alt = get_bloginfo('name');
-		$img = file_get_contents($logo[0]);
-		$data = base64_encode($img);
-	endif;
-
+	$logo = wp_get_attachment_image_url($custom_logo_id,'full');
 	$home_zig_images = get_field( 'zig_zag_img' ) ? get_field( 'zig_zag_img' ) : get_field( 'zig_zag_img', $home_id );
 ?>
 <section class="section full" id="home-slider">
 	<div class="full rellax bg-home" <?php if ( has_header_image() ) { ?> class="custom-background section" data-rellax-speed="5" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
 		<?php if( ! empty( $logo ) ) : ?>
-			<img src="data:image/png+xml;base64,<?php echo $data; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload fadeIn delay-025" />
+			<img src="<?php echo $logo; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload fadeIn delay-025 rellax" data-rellax-speed="2" data-rellax-xs-speed="1" />
 		<?php endif; ?>
-		<h1><?php the_title(); ?></h1>
+		<h1 class="rellax" data-rellax-speed="2" data-rellax-xs-speed="1"><?php the_title(); ?></h1>
 		<?php /* ?>
 		<div class="owl-carousel">
 			<?php
@@ -27,7 +21,7 @@
 			?>
 		</div>
 		<?php */ ?>
-		<a class="scroll-downs btn-sl fadeIn delay-025" href="#about" title="About">
+		<a class="scroll-downs btn-sl fadeIn delay-025 rellax" data-rellax-speed="2" data-rellax-xs-speed="1" href="#about" title="About">
 			<div class="mousey">
 				<div class="scroller"></div>
 			</div>
@@ -56,7 +50,7 @@
 			<?php else: ?>
 				<h1><?php _e( 'Sorry, nothing to display.', 'dp' ); ?></h1>
 			<?php endif; ?>
-			<a class="btn button--orange btn-more" href="#products" title="products">Read more</a>
+			<a class="btn button--green btn-more" href="#products" title="products">Read more</a>
 		</div>
 		<div class="column is-8 rellax home-img" data-rellax-speed="7" data-rellax-xs-speed="5">
 			<?php if ( has_post_thumbnail( $_post->ID ) ) : ?>

@@ -17,7 +17,7 @@
 					<?php if ( ! empty( get_option( 'address' ) ) ) : ?>
 						<p class="foo-address"><?php echo get_option( 'address' ); ?></p>
 					<?php endif; ?>
-					<p><?php
+					<div class="foo-menu"><?php
 						wp_nav_menu(
 							array(
 								'menu'        => 'Footer Menu',
@@ -29,7 +29,7 @@
 								'fallback_cb' => 'Bulma_Menu_Walker::fallback',
 							)
 						);
-					?></p>
+					?></div>
 				</div>
 				</div>
 				<div class="column foo-partners is-full-tablet is-8">
