@@ -1,0 +1,122 @@
+// Breakpoints
+$mobile: 768px;
+$tablet: 801px;
+$desktop: 1024px;
+$big-screen: 1120px;
+$bigger-screen: 1340px;
+$bigest-screen: 1540px;
+
+$medium-screen: 600px;
+$large-screen: 900px;
+
+// Typography
+$font-stack-system: -apple-system,
+	"BlinkMacSystemFont", "Segoe UI", "Roboto",
+	"Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue",
+	sans-serif;
+$base-font-family: "Roboto", sans-serif;
+$heading-font-family: $base-font-family;
+
+$light: 100;
+$regular: 400;
+$bold: 700;
+$black: 900;
+
+// Font Sizes
+$base-font-size: 1em;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$palette: (
+	blue: (
+		base: rgb(19, 7, 70),
+	),
+	grey: (
+		base: rgb(167, 169, 172),
+		dark: #333333,
+	),
+	black: (
+		base: rgb(0, 0, 0),
+	),
+	white: (
+		base: rgb(255, 255, 255),
+	),
+	green:(
+		base: rgb(191, 215, 48),
+	)
+);
+
+$white-base: rgb(255, 255, 255);
+
+// Font Colors
+$base-font-color: palette(grey, dark);
+$action-color: $white-base;
+
+// Linear Gradients
+/* stylelint-disable */
+$lg_transparent_to_white: linear-gradient(-180deg, palette(white, transparent) 0%, palette(white, base) 100%);
+/* stylelint-enable */
+
+// Border
+$base-border-color: palette(grey, base);
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$base-background-color: palette(white, base);
+$secondary-background-color: tint($base-border-color, 75%);
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$form-box-shadow-focus: $form-box-shadow,
+	0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;
+
+// Extended containers
+$container--small: 788px - ( 2 * 32px );
+$container--medium: 948px - ( 2 * 32px );
+
+.container {
+
+	&--small {
+		max-width: $container--small;
+	}
+
+	&--medium {
+		max-width: $container--medium;
+
+		.breadcrumbs {
+
+			@media ( max-width: $big-screen ) {
+				border-radius: 0;
+			}
+		}
+	}
+
+	&--large {
+		max-width: $big-screen;
+		padding: 0 16px;
+
+		.breadcrumbs {
+
+			@media ( max-width: $desktop ) {
+				border-radius: 0;
+			}
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

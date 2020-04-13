@@ -1,0 +1,63 @@
+// Editor styles.
+@import "base/variables";
+
+.call-to-action {
+	background-color: palette(white, base);
+	min-height: 40vh;
+	display: flex;
+	padding: 24px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&.has_background_image {
+		position: relative;
+		color: palette(white, base);
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			top: 50%;
+		}
+
+		&.is-vcentered {
+
+			&::after {
+				top: 0;
+				background: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+
+	> div {
+		width: 100%;
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.is-vcentered {
+	align-items: center;
+}
+
+.is-vtop {
+	align-items: flex-start;
+}
+
+.is-vbottom {
+	align-items: flex-end;
+}
+
+.is-marginless {
+	margin: 0 !important;
+}
+
+div[data-type="dp-blocks/grid"] {
+
+	.block-editor-block-toolbar__slot {
+		display: none;
+	}
+}

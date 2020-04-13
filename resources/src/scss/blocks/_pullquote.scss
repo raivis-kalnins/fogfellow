@@ -1,0 +1,60 @@
+.wp-block-pullquote {
+	background-color: rgba(245, 245, 245, 1) !important;
+	border-radius: 8px;
+	margin: 16px;
+	padding: 40px 5rem;
+	display: block;
+	position: relative;
+
+	@media (max-width: $tablet) {
+		margin: 16px 0 16px 0;
+		padding: 40px 2rem;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		/* stylelint-disable */
+		@include pullquote-left(#00b588);
+		/* stylelint-enable */
+		background-size: cover;
+		mask-repeat: no-repeat;
+		position: absolute;
+		display: block;
+		width: 80px;
+		height: 80px;
+		left: -1rem;
+		top: 50%;
+		margin-top: -40px;
+
+		@media (max-width: $tablet) {
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	&::after {
+		/* stylelint-disable */
+		@include pullquote-right(#00b588);
+		/* stylelint-enable */
+		left: inherit;
+		right: -1rem;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 24px;
+
+		@media (max-width: $tablet) {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	cite {
+		font-style: normal;
+		font-size: 16px;
+		text-transform: none;
+		font-weight: $black;
+	}
+}

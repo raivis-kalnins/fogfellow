@@ -1,0 +1,21 @@
+/*
+ * Theme Name: FOG fellow designs
+ * Theme URI: http://fogfellowdesigns.com
+ * Description: WP Clean Responsive WordPress Theme
+ * Version: 1.3
+ * Author: Digital Pulse
+ * Author URI: http://digitalpulse.click
+ * Tags: Blank, CSS3, SASS, Bulma, Yarn/npm, JavaScript, Ajax, PHP, WP-SCSS, ACF, Webpack, ReactJS, Gutenberg
+ * License: MIT http://digitalpulse.click
+ * License URI: http://opensource.org/licenses/mit-license.php
+ */
+/*------------------------------------*\
+  SCSS BASE STYLE & MIXINS & FONTS
+\*------------------------------------*/
+@import url('/resources/dist/css/fonts.css');
+/* @import url('assets/css/base.css'); Imported by compilator */
+@import url('/resources/dist/css/custom.css');
+/*------------------------------------*\
+    MEDIA PRINT
+\*------------------------------------*/
+@import url('/resources/dist/css/print.css');

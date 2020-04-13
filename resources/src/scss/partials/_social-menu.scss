@@ -1,0 +1,26 @@
+.menu-social-menu-container {
+
+	.menu {
+
+		li {
+			font-size: 1rem;
+			display: inline-block;
+
+			a {
+				display: block;
+				padding: 12px 8px;
+				//				&:before {
+				//					font-family: FontAwesome;
+				//					font-size: 1rem;
+				//					display: inline-block;
+				//				}
+				//				&[href*="//facebook.com/"]:before { content: '\f09a'; }
+				//				&[href*="//twitter.com/"]:before { content: '\f099'; }
+				//				&[href*="//linkedin.com/"]:before { content: '\f08c'; }
+				//				&[href*="//youtube.com/"]:before { content: '\f167'; }
+				//				&[href*="//instagram.com/"]:before { content: '\f16d'; }
+				//				&[href*="//pinterest.com/"]:before { content: '\f0d2'; }
+			}
+		}
+	}
+}

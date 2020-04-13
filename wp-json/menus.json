@@ -1,0 +1,102 @@
+[
+	{
+		"slug":"test",
+		"location":"test",
+		"menu-items":[
+			{
+				"menu-item-title":"Privacy policy",
+				"menu-item-url": "privacy-policy"
+			},
+			{
+				"menu-item-title":"Terms and conditions",
+				"menu-item-url": "terms-and-conditions"
+			},
+			{
+				"menu-item-title":"Cookie policy",
+				"menu-item-url": "cookie-policy"
+			}
+		]
+	},
+	{
+		"name":"Header Menu",
+		"location":"header",
+		"menu-items":[
+			{
+				"menu-item-title":"About Us",
+				"menu-item-url": "about"
+			},
+			{
+				"menu-item-title":"Events",
+				"menu-item-url": "/events"
+			},
+			{
+				"menu-item-title":"News",
+				"menu-item-url": "news"
+			},
+			{
+				"menu-item-title":"Contact",
+				"menu-item-url": "contact"
+			}
+		]
+	},
+	{
+		"name":"Footer Menu",
+		"location":"footer",
+		"menu-items":[
+			{
+				"menu-item-title":"Privacy policy",
+				"menu-item-url": "privacy-policy"
+			},
+			{
+				"menu-item-title":"Terms and conditions",
+				"menu-item-url": "terms-and-conditions"
+			},
+			{
+				"menu-item-title":"Cookie policy",
+				"menu-item-url": "cookie-policy"
+			}
+		]
+	},
+	{
+		"name":"Social Menu",
+		"location":"social",
+		"menu-items":[
+			{
+				"menu-item-title":"Facebook",
+				"menu-item-url": "http://facebook.com/",
+				"menu-item-target": "_blank",
+				"menu-item-classes": "fab fa-facebook"
+			},
+			{
+				"menu-item-title":"Twitter",
+				"menu-item-url": "http://twitter.com/",
+				"menu-item-target": "_blank",
+				"menu-item-classes": "fab fa-twitter"
+			},
+			{
+				"menu-item-title":"LinkedIn",
+				"menu-item-url": "http://linkedin.com/",
+				"menu-item-target": "_blank",
+				"menu-item-classes": "fab fa-linkedin"
+			},
+			{
+				"menu-item-title":"YouTube",
+				"menu-item-url": "http://youtube.com/",
+				"menu-item-target": "_blank",
+				"menu-item-classes": "fab fa-youtube"
+			},
+			{
+				"menu-item-title":"Instagram",
+				"menu-item-url": "http://instagram.com/",
+				"menu-item-target": "_blank",
+				"menu-item-classes": "fab fa-instagram"
+			},
+			{
+				"menu-item-title":"Pinterest",
+				"menu-item-url": "http://pinterest.com/",
+				"menu-item-target": "_blank",
+				"menu-item-classes": "fab fa-pinterest"
+			}
+		]
+	}
+]

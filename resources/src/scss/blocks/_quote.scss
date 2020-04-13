@@ -1,0 +1,14 @@
+.wp-block-quote {
+	padding-left: 16px;
+	position: relative;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		margin-left: calc(4px - 1.5rem);
+		width: 4px;
+		height: 100%;
+		border-radius: 2px;
+	}
+}

@@ -1,0 +1,53 @@
+// Default backgrounds
+.has-white-background-color {
+	background-color: palette(white, default);
+}
+
+.has-black-background-color {
+	background-color: palette(black, default);
+}
+
+.has-caribbean-background-color {
+	background-color: $white-base;
+}
+
+.has-jam-background-color {
+	background-color: $white-base;
+}
+
+// Default text colors
+.has-white-color {
+	color: palette(white, default);
+}
+
+.has-black-color {
+	color: palette(black, default);
+}
+
+.has-caribbean-color {
+	color: $white-base;
+}
+
+.has-jam-color {
+	color: $white-base;
+}
+
+.wp-block-cover,
+.wp-block-cover-image {
+	min-height: 430px;
+	height: auto;
+	border-radius: 8px;
+	margin-bottom: 16px;
+
+	strong {
+		color: inherit;
+	}
+}
+
+.body-pink {
+
+	.wp-block-cover,
+	.wp-block-cover-image {
+
+	}
+}

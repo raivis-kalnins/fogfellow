@@ -1,0 +1,325 @@
+body {
+	font-family: $base-font-family;
+	font-weight: $light;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	color: $base-font-color;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.feature {
+	font-family: $heading-font-family;
+	font-weight: $black;
+	line-height: $heading-line-height;
+	margin: 0 0 $small-spacing;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hyphens: initial;
+}
+
+a {
+	color: $action-color;
+	text-decoration: none;
+	transition: color $base-duration $base-timing;
+
+	&:active,
+	&:focus,
+	&:hover {
+		color: rgba($action-color, 0.8);
+		text-decoration: underline;
+
+		&.navbar-item,
+		&.navbar-link {
+			background: transparent;
+			color: palette(white, base);
+		}
+	}
+}
+
+.read-more {
+	color: $white-base;
+	transition: color $base-duration $base-timing;
+	position: absolute;
+	bottom: 8px;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: $black;
+
+	&::after {
+		content: "";
+		width: 12px;
+		height: 12px;
+		display: block;
+		background-image: url(../img/icons/angle-double-right-pink.svg);
+		background-repeat: no-repeat;
+		transition: all 0.3s ease-out;
+		position: absolute;
+		top: 2px;
+		left: 67px;
+	}
+
+	&:hover {
+		color: shade($action-color, 25%);
+		text-decoration: underline;
+
+		&::after {
+			left: 80px;
+		}
+	}
+}
+
+.faux-link__element {
+
+	&:hover {
+
+		.read-more {
+			transition: all 0.3s ease-out;
+
+			&::after {
+				left: 80px;
+			}
+		}
+	}
+}
+
+strong {
+	font-weight: $bold;
+}
+
+h1,
+.h1 {
+	font-size: 40px;
+	line-height: 48px;
+	font-family: $heading-font-family;
+
+	@media (max-width: $mobile) {
+		font-size: 32px;
+		line-height: 40px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 32px;
+	line-height: 48px;
+	font-family: $heading-font-family;
+	font-weight: $black;
+
+	@media (max-width: $mobile) {
+		font-size: 32px;
+		line-height: 40px;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 24px;
+	line-height: 32px;
+	font-family: $heading-font-family;
+
+	&.proxima {
+		font-family: $base-font-family;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+
+		&.text-400 {
+			font-weight: $regular;
+		}
+	}
+
+	@media (max-width: $mobile) {
+		font-size: 16px;
+		line-height: 40px;
+
+		&.proxima {
+			font-size: 16px;
+			letter-spacing: 1.5px;
+			line-height: 24px;
+		}
+	}
+}
+
+h4,
+.h4 {
+	font-family: $heading-font-family;
+	font-size: 16px;
+	line-height: 24px;
+
+	&.proxima {
+		font-family: $base-font-family;
+		letter-spacing: 1.5px;
+		font-weight: 600;
+		text-transform: uppercase;
+
+		&.text-400 {
+			font-weight: $regular;
+		}
+	}
+}
+
+.copy,
+p {
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: 24px;
+	font-family: $base-font-family;
+}
+
+p,
+.base-text {
+	margin: 0 0 $small-spacing;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: $light;
+}
+
+hr {
+	border-bottom: $base-border;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	margin: $base-spacing 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+dt,
+dd,
+label,
+button {
+
+	&.is-1 {
+		font-size: 40px;
+		font-weight: 900;
+		line-height: 48px;
+
+		&--mobile {
+
+			@media ( max-width: $tablet ) {
+				font-size: 40px;
+				font-weight: 900;
+				line-height: 48px;
+			}
+		}
+	}
+
+	&.is-3 {
+		font-size: 32px;
+		line-height: 40px;
+
+		&--mobile {
+
+			@media ( max-width: $tablet ) {
+				font-size: 32px;
+				line-height: 40px;
+			}
+		}
+	}
+
+	&.is-4 {
+		font-size: 24px;
+		line-height: 32px;
+		font-weight: 900;
+
+		&--mobile {
+
+			@media ( max-width: $tablet ) {
+				font-size: 24px;
+				line-height: 32px;
+				font-weight: 900;
+			}
+		}
+	}
+
+	&.is-5 {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 900;
+
+		&--mobile {
+
+			@media ( max-width: $tablet ) {
+				font-size: 18px;
+				line-height: 24px;
+				font-weight: 900;
+			}
+		}
+	}
+
+	&.is-6 {
+		font-size: 16px;
+		font-weight: 900;
+
+		&--mobile {
+
+			@media ( max-width: $tablet ) {
+
+				font-size: 16px;
+				font-weight: 900;
+
+				&-spacing {
+					letter-spacing: 0.13em;
+				}
+			}
+		}
+
+		&-spacing {
+			letter-spacing: 0.13em;
+		}
+	}
+
+	&.is-7 {
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: 900;
+
+		&--mobile {
+
+			@media ( max-width: $tablet ) {
+				font-size: 12px;
+				line-height: 16px;
+				font-weight: 900;
+			}
+		}
+	}
+}
+
+main {
+	width: 100vw;
+
+	ul {
+		padding-left: 18px;
+		list-style: disc;
+		text-align: left;
+	}
+
+	ol {
+		padding-left: 16px;
+	}
+}
+
+.has-color-pink {
+	color: palette(white, base);
+}

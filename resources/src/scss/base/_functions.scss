@@ -1,0 +1,18 @@
+/**
+ * Color Palettes (map alias)
+ * Usage detailed here: https://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
+ */
+ @function palette($color-name, $color-variant:null) {
+
+	@return map-get(map-get($palette, $color-name), $color-variant);
+
+	@if ($color-variant != null) {
+
+		@return map-get(map-get($palette, $color-name), $color-variant);
+	}
+
+	@else {
+
+		@return map-get($palette, base);
+	}
+}

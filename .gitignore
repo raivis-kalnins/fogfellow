@@ -1,0 +1,13 @@
+.DS_Store
+resources/scss/.sass-cache
+resources/dist/**/*
+resources/dist/*
+!resources/dist/img
+config.codekit
+node_modules/*
+vendor/*
+vendor/
+yarn-error.log
+yarn.lock
+package-lock.json
+composer.lock

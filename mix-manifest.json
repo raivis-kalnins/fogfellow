@@ -1,0 +1,12 @@
+{
+    "/resources/dist/js/gutenberg.js": "/resources/dist/js/gutenberg.js",
+    "/resources/dist/js/scripts.js": "/resources/dist/js/scripts.js",
+    "/resources/dist/css/gutenberg.css": "/resources/dist/css/gutenberg.css",
+    "/resources/dist/css/gutenberg-editor.css": "/resources/dist/css/gutenberg-editor.css",
+    "/resources/dist/js/gutenberg.min.js": "/resources/dist/js/gutenberg.min.js",
+    "/resources/dist/css/gutenberg.min.css": "/resources/dist/css/gutenberg.min.css",
+    "/resources/dist/css/gutenberg-editor.min.css": "/resources/dist/css/gutenberg-editor.min.css",
+    "/resources/dist/css/style.min.css": "/resources/dist/css/style.min.css",
+    "/resources/dist/js/scripts.min.js": "/resources/dist/js/scripts.min.js",
+    "/resources/dist/css/style.css": "/resources/dist/css/style.css"
+}
