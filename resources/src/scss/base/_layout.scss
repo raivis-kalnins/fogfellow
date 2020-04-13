@@ -140,6 +140,7 @@ input:focus {
 					margin: 10px 0.5rem 0 0.5rem;
 					font-weight: $regular;
 					letter-spacing: 0.1rem;
+					transition: all 0.3s ease-out;
 
 					&:hover {
 						background-color: transparent;
@@ -201,6 +202,20 @@ input:focus {
 						float: left;
 						padding-left: 0;
 						color: palette(white, base);
+
+						&::before {
+							content:"|";
+							font-weight: $black;
+							position: absolute;
+							margin-left: -8px;
+						}
+
+						&:first-child {
+
+							&::before {
+								display: none;
+							}
+						}
 					}
 				}
 			}

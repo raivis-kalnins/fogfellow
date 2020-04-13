@@ -1,7 +1,26 @@
-button {
+.button {
 
 	&#m-nav {
 		display: none;
+	}
+
+	&--green {
+		width: fit-content;
+		padding: 10px 40px;
+		text-transform: uppercase;
+		margin-top: 40px;
+		border: palette(green, base) solid 2px;
+		border-radius: 8px;
+		display: block;
+		background-color: palette(blue, base);
+		color: palette(white, base);
+		font-weight: $black;
+		transition: all 0.3s ease-out;
+
+		&:hover {
+			background-color: palette(green, base);
+			color: palette(blue, base);
+		}
 	}
 }
 

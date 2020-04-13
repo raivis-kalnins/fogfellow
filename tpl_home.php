@@ -117,7 +117,7 @@
 		<div class="column">
 			<h2>Shop</h2>
 			<p>Loop shoping items...</p>
-			<a class="btn button--orange btn-more" href="#news" title="News">Read more</a>
+			<a class="btn button--green btn-more" href="#news" title="News">Read more</a>
 		</div>
 	</div>
 </section>
@@ -138,7 +138,7 @@
 					</article>
 				</div>
 			<?php endwhile; wp_reset_query(); */ ?>
-			<a class="btn button--orange btn-more" href="#image-gallery" title="Gallery">Read more</a>
+			<a class="btn button--green btn-more" href="#image-gallery" title="Gallery">Read more</a>
 		</div>
 	</div>
 </section>
