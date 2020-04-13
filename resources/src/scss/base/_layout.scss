@@ -232,6 +232,66 @@ input:focus {
 					margin: 0 auto;
 				}
 			}
+
+			.foo-social {
+
+				.foo-soc {
+					position: relative;
+					float: right;
+					display: block;
+					width: 24px;
+					margin-right: 8px;
+					height: 24px;
+					background-color: palette(white, base);
+					border-radius: 100%;
+		
+					@media ( max-width: $tablet ) {
+						max-width: none;
+						float: none;
+						display: inline-flex;
+					}
+		
+					&:hover {
+						opacity: 0.8;
+					}
+		
+					&::after {
+						content: "";
+						position: absolute;
+						left: 0;
+						top: 0;
+						margin: 2px;
+						width: 20px;
+						height: 20px;
+						mask-position: center;
+						mask-repeat: no-repeat;
+						mask-size: 70%;
+						background-color: palette(grey, dark);
+					}
+		
+					&.soc-fb::after {
+						mask-image: url(../../dist/img/i/soc/facebook-f.svg);
+						mask-size: 50%;
+					}
+		
+					&.soc-ln::after {
+						mask-image: url(../../dist/img/i/soc/linkedin.svg);
+					}
+		
+					&.soc-in::after {
+						mask-image: url(../../dist/img/i/soc/instagram.svg);
+					}
+		
+					&.soc-yt::after {
+						mask-image: url(../../dist/img/i/soc/youtube.svg);
+					}
+		
+					&.soc-rss::after {
+						mask-image: url(../../dist/img/i/soc/rss-solid.svg);
+						mask-size: 70%;
+					}
+				}
+			}
 		}
 	}
 

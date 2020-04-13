@@ -62,9 +62,9 @@
 							<a href="<?php echo get_option( 'soc_fb' ); ?>" target="_blank" class="soc-url faux-link__overlay-link"></a>
 						</div>
 					<?php endif; ?>
-					<?php if ( ! empty( get_option( 'soc_tw' ) ) ) : ?>
-						<div class="foo-soc soc-tw faux-link__element">
-							<a href="<?php echo get_option( 'soc_tw' ); ?>" target="_blank" class="soc-url faux-link__overlay-link"></a>
+					<?php if ( ! empty( get_option( 'soc_ln' ) ) ) : ?>
+						<div class="foo-soc soc-ln faux-link__element">
+							<a href="<?php echo get_option( 'soc_ln' ); ?>" target="_blank" class="soc-url faux-link__overlay-link"></a>
 						</div>
 					<?php endif; ?>
 					<?php if ( ! empty( get_option( 'soc_in' ) ) ) : ?>
@@ -75,11 +75,6 @@
 					<?php if ( ! empty( get_option( 'soc_yt' ) ) ) : ?>
 						<div class="foo-soc soc-yt faux-link__element">
 							<a href="<?php echo get_option( 'soc_yt' ); ?>" target="_blank" class="soc-url faux-link__overlay-link"></a>
-						</div>
-					<?php endif; ?>
-					<?php if ( ! empty( get_option( 'soc_rss' ) ) ) : ?>
-						<div class="foo-soc soc-rss faux-link__element">
-							<a href="<?php echo get_option( 'soc_rss' ); ?>" target="_blank" class="soc-url faux-link__overlay-link"></a>
 						</div>
 					<?php endif; ?>
 				</div>
