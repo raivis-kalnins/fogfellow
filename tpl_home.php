@@ -66,7 +66,7 @@
 		</div>
 	</div>
 </section>
-<div class="d-container">
+<div class="d-container rellax" data-rellax-speed="1" data-rellax-xs-speed="1">
 	<div class="diagonal diagonal--right">
 		<span style="background-image: url(<?php
 		if ( $home_zig_images ) :
@@ -83,32 +83,34 @@
 	<div class="container columns">
 		<div class="column">
 			<h2>Products</h2>
-			<?php if( have_rows('products') ): ?>
-				<div class="row d-flex justify-content-center">
-					<?php while( have_rows('products') ): the_row(); 
-						// vars
-						$image = get_sub_field('image');
-						$title = get_sub_field('title');
-						$link = get_sub_field('link');
-						?>
-						<div class="col-12 col-sm-12 col-md-4 col-lg-2">
-							<?php if( $link ): ?>
-								<a href="<?php echo $link; ?>">
-							<?php endif; ?>
-							<?php 
-								$img_i = file_get_contents($image['url']);
-								$data_i = base64_encode($img_i);
+			<div class="bl-content">
+				<?php if( have_rows('products') ): ?>
+					<div class="row d-flex justify-content-center">
+						<?php while( have_rows('products') ): the_row(); 
+							// vars
+							$image = get_sub_field('image');
+							$title = get_sub_field('title');
+							$link = get_sub_field('link');
 							?>
-								<div style="background: url('data:image/svg+xml;base64,<?php echo $data_i; ?>') center / cover no-repeat"></div>
-								<h3><?php echo $title; ?></h3>
-							<?php if( $link ): ?>
-								</a>
-							<?php endif; ?>
-						</div>
-					<?php endwhile; ?>
-				</div>
-			<?php endif; ?>
-			<a class="btn button--white btn-more" href="#shop" title="Shop">Read more</a>
+							<div class="col-12 col-sm-12 col-md-4 col-lg-2">
+								<?php if( $link ): ?>
+									<a href="<?php echo $link; ?>">
+								<?php endif; ?>
+								<?php 
+									$img_i = file_get_contents($image['url']);
+									$data_i = base64_encode($img_i);
+								?>
+									<div style="background: url('data:image/svg+xml;base64,<?php echo $data_i; ?>') center / cover no-repeat"></div>
+									<h3><?php echo $title; ?></h3>
+								<?php if( $link ): ?>
+									</a>
+								<?php endif; ?>
+							</div>
+						<?php endwhile; ?>
+					</div>
+				<?php endif; ?>
+			</div>
+			<a class="btn button--green btn-more" href="#shop" title="Shop">Read more</a>
 		</div>
 	</div>
 </section>
@@ -125,19 +127,21 @@
 	<div class="container columns">
 		<div class="column">
 			<h2>Blog news</h2>
-			<?php /*
-			function wpdocs_custom_excerpt_length( $length ) { return 10; }
-			add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
-			$args = array('post_type'=>'post','cat'=>'');
-			$loop = new WP_Query($args); 
-			while ($loop->have_posts()): $loop->the_post(); ?>
-				<div class="post-item col-4">
-					<article>
-						<?php the_post_thumbnail(); ?>
-						<a href="<?php the_permalink(); ?>"><h3><?php the_title();?></h3></a>
-					</article>
-				</div>
-			<?php endwhile; wp_reset_query(); */ ?>
+			<div class="bl-content">
+				<?php /*
+				function wpdocs_custom_excerpt_length( $length ) { return 10; }
+				add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
+				$args = array('post_type'=>'post','cat'=>'');
+				$loop = new WP_Query($args); 
+				while ($loop->have_posts()): $loop->the_post(); ?>
+					<div class="post-item col-4">
+						<article>
+							<?php the_post_thumbnail(); ?>
+							<a href="<?php the_permalink(); ?>"><h3><?php the_title();?></h3></a>
+						</article>
+					</div>
+				<?php endwhile; wp_reset_query(); */ ?>
+			</div>
 			<a class="btn button--green btn-more" href="#image-gallery" title="Gallery">Read more</a>
 		</div>
 	</div>

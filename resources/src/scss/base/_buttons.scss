@@ -5,13 +5,15 @@
 	}
 
 	&--green {
-		width: fit-content;
+		text-align: center;
+		position: relative;
+		width: auto;
+		display: inline-flex;
 		padding: 10px 40px;
 		text-transform: uppercase;
-		margin-top: 40px;
+		margin: 40px auto;
 		border: palette(green, base) solid 2px;
 		border-radius: 8px;
-		display: block;
 		background-color: palette(blue, base);
 		color: palette(white, base);
 		font-weight: $black;
