@@ -50,7 +50,7 @@
 			<?php else: ?>
 				<h1><?php _e( 'Sorry, nothing to display.', 'dp' ); ?></h1>
 			<?php endif; ?>
-			<a class="btn button--green btn-more" href="#products" title="products">Read more</a>
+			<a class="btn button--green btn-more" href="#products" title="products">Products</a>
 		</div>
 		<div class="column is-8 rellax home-img" data-rellax-speed="7" data-rellax-xs-speed="5">
 			<?php if ( has_post_thumbnail( $_post->ID ) ) : ?>
@@ -84,33 +84,41 @@
 		<div class="column">
 			<h2>Products</h2>
 			<div class="bl-content">
-				<?php if( have_rows('products') ): ?>
-					<div class="row d-flex justify-content-center">
-						<?php while( have_rows('products') ): the_row(); 
-							// vars
+				<?php 
+					if( have_rows('products') ):
+					$rowCount = count( get_field('products') );
+					$i = 1;
+				?>
+					<ul class="tab-container">
+						<?php while( have_rows('products') ): 
+							the_row();
 							$image = get_sub_field('image');
 							$title = get_sub_field('title');
-							$link = get_sub_field('link');
+							$content = get_sub_field('description');
+							$n = $i++;
 							?>
-							<div class="col-12 col-sm-12 col-md-4 col-lg-2">
-								<?php if( $link ): ?>
-									<a href="<?php echo $link; ?>">
-								<?php endif; ?>
-								<?php 
-									$img_i = file_get_contents($image['url']);
-									$data_i = base64_encode($img_i);
-								?>
-									<div style="background: url('data:image/svg+xml;base64,<?php echo $data_i; ?>') center / cover no-repeat"></div>
-									<h3><?php echo $title; ?></h3>
-								<?php if( $link ): ?>
-									</a>
-								<?php endif; ?>
-							</div>
+							<li>
+								<input class="tab-toggle" id="tab-<?php echo $n; ?>" type="radio" name="toggle" checked /> 
+								<label data-title="Tab <?php echo $n; ?>" class="tab l-b" for="tab-<?php echo $n; ?>"><?php echo $title; ?></label>            
+								<ul class="tab-content-container">
+									<li class="tab-content columns">
+										<div class="column is-4">
+											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+										</div>
+										<div class="column is-8">
+											<?php echo $content; ?>
+											<div class="arrows">
+												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
+												<label class="next tab-<?php echo $n + 1; if( $n == $rowCount) { echo ' last'; } ?>" for="tab-<?php echo $n + 1; ?>">&#8250;</label>   
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
 						<?php endwhile; ?>
-					</div>
+					</ul>
 				<?php endif; ?>
 			</div>
-			<a class="btn button--green btn-more" href="#shop" title="Shop">Read more</a>
 		</div>
 	</div>
 </section>
@@ -119,7 +127,7 @@
 		<div class="column">
 			<h2>Shop</h2>
 			<p>Loop shoping items...</p>
-			<a class="btn button--green btn-more" href="#news" title="News">Read more</a>
+			<a class="btn button--green btn-more" href="#news" title="News">Shop more</a>
 		</div>
 	</div>
 </section>
