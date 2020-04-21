@@ -21,7 +21,7 @@
 			?>
 		</div>
 		<?php */ ?>
-		<a class="scroll-downs btn-sl fadeIn delay-025 rellax" data-rellax-speed="2" data-rellax-xs-speed="1" href="#about" title="About">
+		<a class="scroll-downs btn-sl fadeIn delay-025 rellax" data-rellax-speed="2" data-rellax-xs-speed="1" href="#hello" title="Hello">
 			<div class="mousey">
 				<div class="scroller"></div>
 			</div>
@@ -40,7 +40,7 @@
 		?>)"></span>
 	</div>
 </div>
-<section class="section sc-about" id="sc1">
+<section class="section sc-about sc1" id="hello">
 	<div class="container columns">
 		<div class="column is-4 rellax" data-rellax-speed="4" data-rellax-xs-speed="3">
 			<?php if (have_posts()): 
@@ -50,7 +50,6 @@
 			<?php else: ?>
 				<h1><?php _e( 'Sorry, nothing to display.', 'dp' ); ?></h1>
 			<?php endif; ?>
-			<a class="btn button--green btn-more" href="#products" title="products">Products</a>
 		</div>
 		<div class="column is-8 rellax home-img" data-rellax-speed="7" data-rellax-xs-speed="5">
 			<?php if ( has_post_thumbnail( $_post->ID ) ) : ?>
@@ -79,7 +78,7 @@
 		?>)"></span>
 	</div>
 </div>
-<section class="section sc-products" id="sc2">
+<section class="section sc-products sc2" id="products">
 	<div class="container columns">
 		<div class="column">
 			<h2>Products</h2>
@@ -98,12 +97,14 @@
 							$n = $i++;
 							?>
 							<li>
-								<input class="tab-toggle" id="tab-<?php echo $n; ?>" type="radio" name="toggle" checked /> 
-								<label data-title="Tab <?php echo $n; ?>" class="tab l-b" for="tab-<?php echo $n; ?>"><?php echo $title; ?></label>            
+								<input class="tab-toggle" id="tab-<?php echo $n; ?>" type="radio" name="toggle" <?php if( $n == 1) { echo 'checked'; } ?> /> 
+								<label data-title="Tab <?php echo $n; ?>" class="tab" for="tab-<?php echo $n; ?>"><?php echo $title; ?></label>            
 								<ul class="tab-content-container">
 									<li class="tab-content columns">
 										<div class="column is-4">
-											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+											<div class="image-box">
+												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+											</div>
 										</div>
 										<div class="column is-8">
 											<?php echo $content; ?>
@@ -122,16 +123,16 @@
 		</div>
 	</div>
 </section>
-<section class="section" id="sc3">
+<section class="section sc-shop sc3" id="shop">
 	<div class="container columns">
 		<div class="column">
 			<h2>Shop</h2>
 			<p>Loop shoping items...</p>
-			<a class="btn button--green btn-more" href="#news" title="News">Shop more</a>
+			<a class="btn button--green btn-more" href="./shop" title="Shop">Shop</a>
 		</div>
 	</div>
 </section>
-<section class="section" id="sc4">
+<section class="section sc-news sc4" id="news">
 	<div class="container columns">
 		<div class="column">
 			<h2>Blog news</h2>
@@ -150,7 +151,7 @@
 					</div>
 				<?php endwhile; wp_reset_query(); */ ?>
 			</div>
-			<a class="btn button--green btn-more" href="#image-gallery" title="Gallery">Read more</a>
+			<a class="btn button--green btn-more" href="./news" title="news">All news</a>
 		</div>
 	</div>
 </section>

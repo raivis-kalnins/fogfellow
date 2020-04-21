@@ -93,3 +93,36 @@ var rellax = new Rellax('.rellax', {
     vertical: true,
     horizontal: false
 });
+
+/* Scroll Up/Down */
+var scrollDown = $('.menu-item'),
+	scrollUp = $('.scroll-up'),
+	page = $('html, body'),
+	slide = $('.section'),
+	viewportHeight = $(window).height();
+
+
+$(function() {
+	windowResize();
+});
+
+$(scrollDown).click(function(event) {
+	var currentSlideHeight = $(this).parent().height();
+	page.animate({
+		scrollTop : page.scrollTop() + currentSlideHeight,
+	}, 1000);
+	event.preventDefault();
+});
+
+$(scrollUp).click(function(event) {
+	page.animate({
+		scrollTop : 0,
+	}, 1000);
+	event.preventDefault();
+});
+
+function windowResize() {
+	$(window).resize(function(e) {
+		viewportHeight = $(window).height();
+	});
+}

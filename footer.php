@@ -7,7 +7,7 @@
  * @copyright  Digital Pulse
  */
 ?>
-		<footer class="footer">
+		<footer class="footer sc-contact sc5" id="contact">
 			<div class="container columns foo-top">
 				<div class="column foo-address is-full-tablet is-4-desktop">
 					<h2>Contact us</h2>
@@ -55,6 +55,7 @@
 			<div class="container columns foo-bottom">
 				<div class="column foo-copyright is-full-tablet is-7">
 					<span>Copyright &copy; 2019 - <?php echo date('Y'); ?> FOG Fellow Designs LTD</span>
+					<a href="#" class="scroll-up">Scroll top</a>
 				</div>
 				<div class="column foo-social is-full-tablet is-5">
 					<?php if ( ! empty( get_option( 'soc_fb' ) ) ) : ?>

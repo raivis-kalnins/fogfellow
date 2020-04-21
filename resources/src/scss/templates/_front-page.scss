@@ -63,7 +63,7 @@ body.home {
 		background-color: palette(blue, base);
 		position: relative;
 
-		&#sc1 {
+		&.sc1 {
 			padding-top: 300px;
 			padding-bottom: 0;
 
@@ -84,14 +84,92 @@ body.home {
 				opacity: 0.4;
 			}
 
-			.button--green {
-				margin-left: 0;
+			blockquote.wp-block-quote {
+				margin: 140px auto;
+				padding: 1.5rem;
+				position: relative;
+				background: rgba(palette(white, base),0.7);
+				border-radius: 8px;
+				box-shadow: 5px 3px 30px palette(black, base);
+				text-align: center;
+
+				&::before,
+				&::after {
+					content: "";
+					background: linear-gradient(88deg, palette(white, base), palette(green, base));
+					mask-image: url('data:image/svg+xml;charset=utf-8,<svg aria-hidden="true" data-prefix="fas" data-icon="quote-left" class="svg-inline--fa fa-quote-left fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"/></svg>');
+					background-size: cover;
+					mask-repeat: no-repeat;
+					position: absolute;
+					display: block;
+					width: 50px;
+					height: 50px;
+					left: -15px;
+					top: 50%;
+					margin-top: -40px;
+				}
+
+				&::after {
+					left: auto;
+					right: -35px;
+					background: linear-gradient(88deg, palette(green, base), palette(white, base));
+					mask-image: url('data:image/svg+xml;charset=utf-8,<svg aria-hidden="true" data-prefix="fas" data-icon="quote-right" class="svg-inline--fa fa-quote-right fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/></svg>');
+				}
+
+				p {
+					color: palette(blue, base);
+					font-weight: $regular;
+				}
+
+				cite {
+					position: relative;
+					width: 100%;
+					
+					strong {
+						color: palette(blue, base);
+					}
+
+					&::before,
+					&::after {
+						content: "";
+						height: 2px;
+						border-radius: 2px;
+						width: 100%;
+						position: absolute;
+						top: 50%;
+						background: linear-gradient(88deg, palette(green, base), palette(white, base));
+						transform: translateY(-50%);
+					}
+
+					&::before {
+						left: -120%;
+					}
+
+					&::after {
+						background: linear-gradient(88deg, palette(white, base), palette(green, base));
+						right: -120%;
+					}
+				}
+			}
+
+			.home-img {
+				padding: 40px;
+				margin-top: 350px;
+				z-index: 7;
+	
+				img {
+					border: palette(green, base) solid 5px;
+					border-radius: 8px;
+					position: relative;
+					max-width: 570px;
+					float: right;
+				}
 			}
 		}
 
-		&#sc2, 
-		&#sc4 {
-			min-height: 500px;
+		&.sc2, 
+		&.sc4 {
+			min-height: 520px;
 			z-index: 2;
 
 			@include hero-bg(palette(grey, base));
@@ -103,7 +181,7 @@ body.home {
 			}
 		}
 
-		&#sc2 {
+		&.sc2 {
 			background-repeat: repeat;
 			background-size: contain;
 			background-position: center;
@@ -180,9 +258,32 @@ body.home {
 							min-height: 182px;
 							transition: opacity 0.1s ease-in;
 
-							img {
-								border: palette(green, base) solid 2px;
-								border-radius: 8px;
+							.column {
+
+								&:first-child {
+
+									.image-box {
+										border: palette(green, base) solid 2px;
+										border-radius: 8px;
+										position: relative;
+										overflow: hidden;
+										width: 100%;
+										height: 218px;
+
+										img {
+											transition: all 0.5s ease-out;
+											cursor: zoom-in;
+										}
+
+										&:hover {
+											
+											img {
+												position: absolute;
+												transform: scale(1.4);
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -205,10 +306,6 @@ body.home {
 						border-top: 2px solid transparent;
 						border-right: 2px solid transparent;
 						transition: all 0.2s ease-out;
-
-						&.l-b {
-							border-left: 2px solid transparent;
-						}
 
 						&:hover {
 							opacity: 0.9;
@@ -271,17 +368,6 @@ body.home {
 		&#home-slider {
 			height: 100vh;
 			z-index: 2;
-		}
-
-		.home-img {
-			padding: 40px;
-			margin-top: 350px;
-			z-index: 7;
-
-			img {
-				border: palette(green, base) solid 5px;
-				border-radius: 8px;
-			}
 		}
 	}
 
