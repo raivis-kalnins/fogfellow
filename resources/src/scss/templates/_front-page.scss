@@ -85,7 +85,7 @@ body.home {
 			}
 
 			blockquote.wp-block-quote {
-				margin: 140px auto;
+				margin: 10vh auto;
 				padding: 1.5rem;
 				position: relative;
 				background: rgba(palette(white, base),0.7);
@@ -345,6 +345,21 @@ body.home {
 			}
 		}
 
+		&.sc3 {
+
+			.show-cart li {
+				display: flex;
+			}
+			.card {
+				margin-bottom: 20px;
+			}
+			.card-img-top {
+				width: 200px;
+				height: 200px;
+				align-self: center;
+			}
+		}
+
 		.bl-content {
 			width: 100%;
 			display: inline-block;
@@ -363,6 +378,7 @@ body.home {
 
 		p {
 			color: palette(white, base);
+			font-weight: $regular;
 		}
 
 		&#home-slider {

@@ -44,6 +44,9 @@
 									);
 								?>
 							</div>
+							<div class="cart-top">
+								<button type="button" class="btn btn-primary modal-button" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
+							</div>
 							<div class="soc-top hidden">
 								<a href="https://www.facebook.com" class="soc fb" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 							</div>

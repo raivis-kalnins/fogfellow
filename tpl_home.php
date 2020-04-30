@@ -127,8 +127,15 @@
 	<div class="container columns">
 		<div class="column">
 			<h2>Shop</h2>
-			<p>Loop shoping items...</p>
-			<a class="btn button--green btn-more" href="./shop" title="Shop">Shop</a>
+			<div class="card" style="width: 20rem;">
+				<img class="card-img-top" src="http://www.azspagirls.com/files/2010/09/orange.jpg" alt="Card image cap">
+				<div class="card-block">
+					<h4 class="card-title">Orange</h4>
+					<p class="card-text">Price: $0.5</p>
+					<a href="#" data-name="Orange" data-price="0.5" class="add-to-cart btn btn-primary">Add to cart</a>
+				</div>
+			</div>
+			<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/shop" title="Shop">Shop</a>
 		</div>
 	</div>
 </section>
@@ -137,21 +144,42 @@
 		<div class="column">
 			<h2>Blog news</h2>
 			<div class="bl-content">
-				<?php /*
-				function wpdocs_custom_excerpt_length( $length ) { return 10; }
-				add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 32 );
-				$args = array('post_type'=>'post','cat'=>'');
-				$loop = new WP_Query($args); 
-				while ($loop->have_posts()): $loop->the_post(); ?>
-					<div class="post-item col-4">
-						<article>
-							<?php the_post_thumbnail(); ?>
-							<a href="<?php the_permalink(); ?>"><h3><?php the_title();?></h3></a>
+			<?php
+						$args = array(
+							'post_type'      => 'post',
+							'cat'            => 'news',
+							'posts_per_page' => 4,
+						);
+						$loop = new WP_Query( $args );
+						if ( have_posts() ) :
+						while ( $loop->have_posts() ) :
+								$loop->the_post();
+								$background = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
+								?>
+					<div class="column is-full-mobile is-full-tablet is-half">
+						<article class="card card--related all-news faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
+							<div class="thumbnail" style="background-image:url( 
+									<?php
+									if ( $background ) {
+										echo $background; }
+									?>
+								)"></div>
+								<div class="main has-color-black has-background-white">
+									<time datetime="<?php echo get_the_date( 'F-jS-Y' ); ?>"><span class="is-8 has-text-weight-light"><?php echo get_the_date( 'F jS Y' ); ?></span></time>
+									<h4 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h4>
+									<span><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
+									<p class="read-more">Read More</p>
+								</div>
+							<a href="<?php the_permalink(); ?>" class="faux-link__overlay-link"></a>
 						</article>
 					</div>
-				<?php endwhile; wp_reset_query(); */ ?>
+					<?php
+						endwhile;
+						wp_reset_query();
+						endif;
+					?>
 			</div>
-			<a class="btn button--green btn-more" href="./news" title="news">All news</a>
+			<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/news" title="news">All news</a>
 		</div>
 	</div>
 </section>
