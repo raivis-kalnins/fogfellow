@@ -9,10 +9,13 @@
 ?>
 		<footer class="footer sc-contact sc5" id="contact">
 			<div class="container columns foo-top">
-				<div class="column foo-address is-full-tablet is-4-desktop">
+				<div class="column foo-contacts is-full-tablet is-5-desktop">
 					<h2>Contact us</h2>
 					<?php if ( ! empty( get_option( 'phone' ) ) ) : ?>
 						<p class="foo-phone"><?php echo get_option( 'phone' ); ?></p>
+					<?php endif; ?>
+					<?php if ( ! empty( get_option( 'email' ) ) ) : ?>
+						<p class="foo-email"><?php echo get_option( 'email' ); ?></p>
 					<?php endif; ?>
 					<?php if ( ! empty( get_option( 'address' ) ) ) : ?>
 						<p class="foo-address"><?php echo get_option( 'address' ); ?></p>
@@ -31,7 +34,7 @@
 						);
 					?></div>
 				</div>
-				<div class="column foo-partners is-full-tablet is-8">
+				<div class="column foo-partners is-full-tablet is-7">
 					<div class="partners-wrap">
 						<?php if ( ! empty( get_option( 'partner1' ) ) ) : ?>
 							<div class="foo-partner">
@@ -82,27 +85,22 @@
 		</footer>
 	</main>
 	<!-- Modal -->
-	<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg" role="document">
-		<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title" id="exampleModalLabel">Cart</h5>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-			</button>
+	<div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<i class="modal-close"></i>
+				<div class="modal-header">
+					<h2 class="modal-title" id="exampleModalLabel">Shopping basket</h2>
+				</div>
+				<div class="modal-body">
+					<table class="show-cart table"></table>
+					<div><b>Total price:</b> £ <span class="total-cart"></span></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="modal-order button--green btn-more">Order now</button>
+				</div>
+			</div>
 		</div>
-		<div class="modal modal-body">
-			<table class="show-cart table">
-			
-			</table>
-			<div>Total price: $<span class="total-cart"></span></div>
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary">Order now</button>
-		</div>
-		</div>
-	</div>
 	</div> 
 	<?php
 		$template_file = get_post_meta( get_the_ID(), '_wp_page_template', true );

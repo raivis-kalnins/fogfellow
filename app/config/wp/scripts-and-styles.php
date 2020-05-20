@@ -17,6 +17,7 @@ function dp_enqueue_scripts_and_styles() {
 	// Register styles
 	wp_register_style( 'css_swiper', dp_assets( 'vendor/swiper/css/swiper.min.css' ), array(), $style_time );
 	wp_register_style( 'css_rellax', dp_assets( 'vendor/rellax/css/main.min.css' ), array(), $style_time );
+	wp_register_style( 'css_fancybox', dp_assets( 'vendor/fancybox/jquery.fancybox.min.css' ), array(), $style_time );
 	wp_register_style( 'styles', dp_assets( 'css/style.min.css' ), array(), $style_time );
 
 	// Register scripts
@@ -25,6 +26,7 @@ function dp_enqueue_scripts_and_styles() {
 	wp_register_script( 'js_rellax', dp_assets( 'vendor/rellax/rellax.min.js' ), array(), '', true );
 	wp_register_script( 'js_jquery', dp_assets( 'js/vendor/jquery.min.js' ), array(), '', true );
 	wp_register_script( 'js_lazy', dp_assets( 'js/vendor/jquery.lazy.min.js' ), array(), '', true );
+	wp_register_script( 'js_fancybox', dp_assets( 'vendor/fancybox/jquery.fancybox.min.js' ), array(), $style_time );
 	wp_register_script( 'scripts', dp_assets( 'js/scripts.min.js' ), array( 'polyfill' ), '', true );
 
 	// Enqueue scripts
@@ -33,10 +35,12 @@ function dp_enqueue_scripts_and_styles() {
 	wp_enqueue_script( 'js_rellax' );
 	wp_enqueue_script( 'js_jquery' );
 	wp_enqueue_script( 'js_lazy' );
+	wp_enqueue_script( 'js_fancybox' );
 	wp_enqueue_script( 'scripts' );
 
 	// Enqueue styles
 	wp_enqueue_style( 'css_swiper' );
+	wp_enqueue_style( 'css_fancybox' );
 	wp_enqueue_style( 'styles' );
 
 	// Conditionally enqueue gutenberg styles.

@@ -26,6 +26,18 @@
 	}
 }
 
+.fancybox-button {
+	background: rgba(palette(green, base), 0.9);
+
+	svg {
+		color: palette(blue, base);
+	}
+
+	&[disabled] svg {
+		opacity: 0.1;
+	}
+}
+
 .scroll-downs {
 	position: absolute;
 	bottom: 10vh;

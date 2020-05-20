@@ -1,0 +1,94 @@
+/* stylelint-disable */
+/* stylelint-enable */
+.container--small {
+  max-width: 724px;
+}
+
+.container--medium {
+  max-width: 884px;
+}
+
+@media (max-width: 1120px) {
+  .container--medium .breadcrumbs {
+    border-radius: 0;
+  }
+}
+
+.container--large {
+  max-width: 1120px;
+  padding: 0 16px;
+}
+
+@media (max-width: 1024px) {
+  .container--large .breadcrumbs {
+    border-radius: 0;
+  }
+}
+
+.container--large .breadcrumbs::before {
+  display: none;
+}
+
+.call-to-action {
+  background-color: palette(white, base);
+  min-height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.call-to-action.has_background_image {
+  position: relative;
+  color: palette(white, base);
+}
+
+.call-to-action.has_background_image::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+
+.call-to-action.has_background_image.is-vcentered::after {
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.call-to-action > div {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.is-vcentered {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.is-vtop {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.is-vbottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.is-marginless {
+  margin: 0 !important;
+}
+
+div[data-type="dp-blocks/grid"] .block-editor-block-toolbar__slot {
+  display: none;
+}
+/*# sourceMappingURL=gutenberg-editor.css.map */

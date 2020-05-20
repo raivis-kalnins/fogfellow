@@ -23,35 +23,36 @@
 		<div class="scroller_header"><div id="scroll-line"></div></div>
 		<main role="main">
 			<nav class="navbar" role="navigation" aria-label="main navigation">
-					<button id="m-nav" class="hidden"></button>
-					<div class="container">
-						<div class="navbar-brand hidden">
-							<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
+				<button id="m-nav" class="hidden"></button>
+				<div class="container">
+					<div class="navbar-brand hidden">
+						<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
+					</div>
+					<div class="navbar-menu">
+						<div class="navbar-end">
+							<?php
+							wp_nav_menu(
+								array(
+									'menu'        => 'Main menu',
+									'depth'       => 3,
+									'container'   => '',
+									'menu_class'  => '',
+									'items_wrap'  => '%3$s',
+									'walker'      => new Bulma_Menu_Walker(),
+									'fallback_cb' => 'Bulma_Menu_Walker::fallback',
+								)
+								);
+							?>
 						</div>
-						<div class="navbar-menu">
-							<div class="navbar-end">
-								<?php
-								wp_nav_menu(
-									array(
-										'menu'        => 'Main menu',
-										'depth'       => 3,
-										'container'   => '',
-										'menu_class'  => '',
-										'items_wrap'  => '%3$s',
-										'walker'      => new Bulma_Menu_Walker(),
-										'fallback_cb' => 'Bulma_Menu_Walker::fallback',
-									)
-									);
-								?>
-							</div>
-							<div class="cart-top">
-								<button type="button" class="btn btn-primary modal-button" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger">Clear Cart</button>
-							</div>
-							<div class="soc-top hidden">
-								<a href="https://www.facebook.com" class="soc fb" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-							</div>
+						<div class="cart-top">
+							<button type="button" class="btn-cart button modal-button" data-toggle="modal" data-target="modal"><span class="total-count"></span></button>
+							<span class="clear-cart"></span>
+						</div>
+						<div class="soc-top hidden">
+							<a href="https://www.facebook.com" class="soc fb" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 						</div>
 					</div>
+				</div>
 			</nav>
 			<?php if(is_front_page()) : ?>
 				<div class="waveHorizontals">
