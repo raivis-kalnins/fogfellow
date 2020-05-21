@@ -2,6 +2,7 @@
 	ini_set('display_errors', 1); // debug PHP
 	$custom_logo_id = get_theme_mod('custom_logo'); 
 	$logo = wp_get_attachment_image_src($custom_logo_id,'full');
+	$logo_s = get_template_directory_uri().'/resources/dist/img/br/fog-logo-s.png';
 	$logo_alt = get_bloginfo('name');
 ?>
 <!doctype html>
@@ -26,7 +27,7 @@
 				<button id="m-nav" class="hidden"></button>
 				<div class="container">
 					<div class="navbar-brand hidden">
-						<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo[0]; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
+						<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo_s; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
 					</div>
 					<div class="navbar-menu">
 						<div class="navbar-end">

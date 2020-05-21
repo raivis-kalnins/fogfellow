@@ -1,6 +1,6 @@
 body {
 	font-family: $base-font-family;
-	font-weight: $light;
+	font-weight: $regular;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 	color: $base-font-color;
@@ -32,6 +32,10 @@ a {
 	color: $action-color;
 	text-decoration: none;
 	transition: color $base-duration $base-timing;
+
+	&.navbar-item.is-active {
+		background-color: transparent;
+	}
 
 	&:active,
 	&:focus,
@@ -306,7 +310,7 @@ button {
 }
 
 main {
-	width: 100vw;
+	width: 100%;
 
 	ul {
 		padding-left: 18px;

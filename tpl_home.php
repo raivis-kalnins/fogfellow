@@ -131,7 +131,7 @@
 			<?php
 				$args_shop = array(
 					'post_type'      => 'shop',
-					'posts_per_page' => 4,
+					'posts_per_page' => 12,
 				);
 				$loop_shop = new WP_Query( $args_shop );
 				if ( have_posts() ) :
@@ -146,15 +146,16 @@
 							<?php
 							if ( $bg_shop ) {
 								echo $bg_shop; }
+								$post = get_post( $post_id );
+								$slug = $post->post_name;
 							?>
 						)"></div>
 						<div class="main has-color-black has-background-white">
-							<h4 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h4>
-							<span><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
-							<span class="card-price">Price: £<?php echo $price; ?></span>
-							<hr />
-							<a href="#" data-name="<?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?>" data-price="<?php echo $price; ?>" class="add-to-cart button">Add to cart</a>
-							<a href="<?php the_permalink(); ?>" class="read-more-shop button">Read More</a>
+							<h3 class="is-4" data-title="<?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?>"><?php esc_html_e( sb_truncate( get_the_title(), 55 ) ); ?></h3>
+							<div class="card-desc"><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></div>
+							<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
+							<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
+							<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
 						</div>
 				</article>
 			</div>
@@ -164,16 +165,6 @@
 				endif;
 			?>
 		</div>
-		<?php /*
-			<div class="card" style="width: 20rem;">
-				<img class="card-img-top" src="http://www.azspagirls.com/files/2010/09/orange.jpg" alt="Card image cap">
-				<div class="card-block">
-					<h4 class="card-title">Orange</h4>
-					<p class="card-text">Price: $0.5</p>
-					<a href="#" data-name="Orange" data-price="0.5" class="add-to-cart button">Add to cart</a>
-				</div>
-			</div>
-		*/ ?>
 		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/shop" title="Shop">Shop</a>
 	</div>
 </section>
@@ -202,9 +193,9 @@
 							?>
 						)"></div>
 						<div class="main has-color-black has-background-white">
-							<h4 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h4>
-							<span><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
-							<p class="read-more">Read More</p>
+							<h3 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h3>
+							<span class="desc"><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
+							<span class="read-more">Read More</span>
 						</div>
 					<a href="<?php the_permalink(); ?>" class="faux-link__overlay-link"></a>
 				</article>

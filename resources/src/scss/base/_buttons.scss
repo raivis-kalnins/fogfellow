@@ -4,6 +4,14 @@
 		display: none;
 	}
 
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:focus {
+		border-color: palette(grey, base);
+	}
+
 	&--green {
 		text-align: center;
 		position: relative;
@@ -23,6 +31,16 @@
 			background-color: palette(green, base);
 			color: palette(blue, base);
 		}
+	}
+
+	&--fullgreen {
+		background-color: palette(green, base);
+		color: palette(blue, base);
+	}
+
+	&--fullgrey {
+		background-color: palette(grey, base);
+		color: palette(blue, base);
 	}
 }
 
