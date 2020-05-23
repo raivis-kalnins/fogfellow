@@ -127,43 +127,45 @@
 <section class="section sc-shop sc3" id="shop">
 	<div class="container">
 		<h2>Shop</h2>
-		<div class="bl-content columns">
-			<?php
-				$args_shop = array(
-					'post_type'      => 'shop',
-					'posts_per_page' => 12,
-				);
-				$loop_shop = new WP_Query( $args_shop );
-				if ( have_posts() ) :
-				while ( $loop_shop->have_posts() ) :
-						$loop_shop->the_post();
-						$bg_shop = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
-						$price = get_field('price');
-			?>
-			<div class="column is-full-mobile is-half-tablet is-3">
-				<article class="card card--related all-shop faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
-					<div class="thumbnail" style="background-image:url( 
-							<?php
-							if ( $bg_shop ) {
-								echo $bg_shop; }
-								$post = get_post( $post_id );
-								$slug = $post->post_name;
-							?>
-						)"></div>
-						<div class="main has-color-black has-background-white">
-							<h3 class="is-4" data-title="<?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?>"><?php esc_html_e( sb_truncate( get_the_title(), 55 ) ); ?></h3>
-							<div class="card-desc"><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></div>
-							<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
-							<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
-							<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
-						</div>
-				</article>
+		<div class="bl-content columns swiper-container">
+			<div class="swiper-wrapper">
+				<?php
+					$args_shop = array(
+						'post_type'      => 'shop',
+						'posts_per_page' => 12,
+					);
+					$loop_shop = new WP_Query( $args_shop );
+					if ( have_posts() ) :
+					while ( $loop_shop->have_posts() ) :
+							$loop_shop->the_post();
+							$bg_shop = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
+							$price = get_field('price');
+				?>
+				<div class="column swiper-slide is-full-mobile is-half-tablet is-3">
+					<article class="card card--related all-shop faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
+						<div class="thumbnail" style="background-image:url( 
+								<?php
+								if ( $bg_shop ) {
+									echo $bg_shop; }
+									$post = get_post( $post_id );
+									$slug = $post->post_name;
+								?>
+							)"></div>
+							<div class="main has-color-black has-background-white">
+								<h3 class="is-4" data-title="<?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?>"><?php esc_html_e( sb_truncate( get_the_title(), 55 ) ); ?></h3>
+								<div class="card-desc"><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></div>
+								<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
+								<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
+								<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
+							</div>
+					</article>
+				</div>
+				<?php
+					endwhile;
+					wp_reset_query();
+					endif;
+				?>
 			</div>
-			<?php
-				endwhile;
-				wp_reset_query();
-				endif;
-			?>
 		</div>
 		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/shop" title="Shop">Shop</a>
 	</div>
