@@ -167,7 +167,7 @@
 				?>
 			</div>
 		</div>
-		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/shop" title="Shop">Shop</a>
+		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/shop" title="Shop">All products</a>
 	</div>
 </section>
 <section class="section sc-news sc4" id="news">

@@ -151,6 +151,8 @@ input:focus {
 
 		.navbar-brand {
 			position: absolute;
+			margin-left: 40px;
+			z-index: 3;
 
 			img {
 				height: 50px;
@@ -159,7 +161,7 @@ input:focus {
 
 		.navbar-menu {
 			position: relative;
-			z-index: 3;
+			z-index: 2;
 
 			@media (min-width: $desktop) {
 				display: inline-block;
@@ -226,6 +228,19 @@ input:focus {
 .content {
 	height: 70px;
 	background-color:#4c72c2;
+}
+
+.columns {
+	flex-wrap: wrap;
+}
+
+.single-content {
+
+	.fancybox.image {
+		float: left;
+		text-align: center;
+		margin: 10px 5px;
+	}
 }
 
 .fancybox-bg {

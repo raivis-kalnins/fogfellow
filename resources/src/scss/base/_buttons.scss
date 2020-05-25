@@ -15,7 +15,8 @@
 	&--green {
 		text-align: center;
 		position: relative;
-		width: 190px;
+		width: fit-content;
+		max-width: 220px;
 		display: block;
 		padding: 10px 40px;
 		text-transform: uppercase;
