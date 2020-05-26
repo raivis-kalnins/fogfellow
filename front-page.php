@@ -1,4 +1,4 @@
-<?php /* Template Name: Home Page TPL - PHP */ 
+<?php /* Template Name: Front Page Template */ 
 	get_header();
 	$custom_logo_id = get_theme_mod('custom_logo'); 
 	$logo = wp_get_attachment_image_url($custom_logo_id,'full');
@@ -10,17 +10,6 @@
 			<img src="<?php echo $logo; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload fadeIn delay-025 rellax" data-rellax-speed="2" data-rellax-xs-speed="1" />
 		<?php endif; ?>
 		<h1 class="rellax" data-rellax-speed="2" data-rellax-xs-speed="1"><?php the_title(); ?></h1>
-		<?php /* ?>
-		<div class="owl-carousel">
-			<?php
-				if ( has_post_thumbnail() ):
-					for ($i = 1; $i <= 7; $i++) :
-						if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), "image0$i", NULL, "full"); endif;
-					endfor;
-				endif;
-			?>
-		</div>
-		<?php */ ?>
 		<a class="scroll-downs btn-sl fadeIn delay-025 rellax" data-rellax-speed="2" data-rellax-xs-speed="1" href="#hello" title="Hello">
 			<div class="mousey">
 				<div class="scroller"></div>

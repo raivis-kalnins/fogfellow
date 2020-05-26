@@ -86,6 +86,29 @@ function register_additional_customizer_settings( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'shop-desc',
+		array(
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+		);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'shop-desc',
+			array(
+				'label'       => __( 'Shop', 'textdomain' ),
+				'description' => __( 'Shop description', 'textdomain' ),
+				'priority'    => 10,
+				'section'     => 'title_tagline',
+				'type'        => 'textarea',
+			)
+		)
+	);
+
+
 	/**
 	 * New Homepage Media section
 	 */
@@ -798,3 +821,18 @@ function hide_event_tables( $hook ) {
 <?php
 }
 add_action( 'admin_enqueue_scripts', 'hide_event_tables' );
+
+
+/**
+ * Redirect 'category/news' category to 'News page' ( at http://www.example.com/news' )
+ *
+ */
+function template_category_template_redirect()
+{
+    if( is_category())
+    {
+        wp_redirect( site_url() );
+        die;
+    }
+}
+add_action( 'template_redirect','template_category_template_redirect' );

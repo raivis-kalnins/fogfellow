@@ -2,6 +2,16 @@ body.archive {
 
 	section.section-archive {
 
+		header.archive {
+
+			&--head {
+				position: relative;
+				width: 100%;
+				margin-top: 100px;
+				margin-bottom: 0;
+			}
+		}
+
 		.container {
 
 			.term-description-container {
@@ -12,5 +22,38 @@ body.archive {
 				margin: 0 auto;
 			}
 		}
+	}
+
+	&.post-type-archive-shop {
+
+		header.archive {
+
+			&--head {
+
+				h1 {
+					text-transform: uppercase;
+					padding-left: 4rem;
+				
+					&::before {
+						content: "";
+						position: absolute;
+						top: 12px;
+						margin: 8px -3.8rem;
+						width: 3rem;
+						height: 30px;
+						mask-position: center;
+						mask-repeat: no-repeat;
+						background-color: palette(green, base);
+						mask-image: url(../../dist/img/i/shopping-cart-solid.svg);
+						mask-size: 100% 100%;
+					}
+				}
+
+				.shop-desc {
+					padding-left: 0.75rem;
+				}
+			}
+		}
+
 	}
 }
