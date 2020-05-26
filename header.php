@@ -26,7 +26,7 @@
 			<nav class="navbar" role="navigation" aria-label="main navigation">
 				<button id="m-nav" class="hidden"></button>
 				<div class="container">
-					<div class="navbar-brand hidden">
+					<div class="navbar-brand">
 						<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo_s; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
 					</div>
 					<div class="navbar-menu">

@@ -88,6 +88,7 @@
 			</div>
 		</footer>
 	</main>
+	<div class="scroll-up"></div>
 	<!-- Modal -->
 	<div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">

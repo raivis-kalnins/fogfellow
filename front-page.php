@@ -90,12 +90,12 @@
 								<label data-title="Tab <?php echo $n; ?>" class="tab" for="tab-<?php echo $n; ?>"><?php echo $title; ?></label>            
 								<ul class="tab-content-container">
 									<li class="tab-content columns">
-										<div class="column is-4">
+										<div class="column is-full-tablet is-4">
 											<div class="image-box">
 											<a data-fancybox="gallery" href="<?php echo $image['url']; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
 											</div>
 										</div>
-										<div class="column is-8">
+										<div class="column is-full-tablet is-8">
 											<?php echo $content; ?>
 											<span class="button--green btn-desc-<?php echo $n; ?>">Read more</span>
 											<div class="arrows">
@@ -163,40 +163,40 @@
 	<div class="container">
 		<h2>Blog news</h2>
 		<div class="bl-content columns">
-			<?php
-				$args_news = array(
-					'post_type'      => 'post',
-					'cat'            => 'news',
-					'posts_per_page' => 4,
-				);
-				$loop_news = new WP_Query( $args_news );
-				if ( have_posts() ) :
-				while ( $loop_news->have_posts() ) :
-						$loop_news->the_post();
-						$bg_news = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
-			?>
-			<div class="column is-full-mobile is-half-tablet is-3">
-				<article class="card card--related all-news faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
-					<div class="thumbnail" style="background-image:url( 
-							<?php
-							if ( $bg_news ) {
-								echo $bg_news; }
+		<?php
+					$args = array(
+						'post_type'      => 'post',
+						'cat'            => 'news',
+						'posts_per_page' => 4,
+					);
+					$loop = new WP_Query( $args );
+					if ( have_posts() ) :
+					while ( $loop->have_posts() ) :
+							$loop->the_post();
+							$background = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
 							?>
-						)"></div>
-						<div class="main has-color-black has-background-white">
-							<h3 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h3>
-							<span class="desc"><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
-							<span class="read-more">Read More</span>
-						</div>
-					<a href="<?php the_permalink(); ?>" class="faux-link__overlay-link"></a>
-				</article>
-			</div>
-			<?php
+				<div class="column is-full-mobile is-half-tablet is-half-desktop">
+					<article class="card card--related all-news faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
+						<div class="thumbnail" style="background-image:url( 
+								<?php
+								if ( $background ) {
+									echo $background; }
+								?>
+							)"></div>
+							<div class="main has-color-black has-background-white">
+								<time datetime="<?php echo get_the_date( 'F-jS-Y' ); ?>"><span class="is-8 has-text-weight-light"><?php echo get_the_date( 'F jS Y' ); ?></span></time>
+								<h4 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h4>
+								<span><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
+								<p class="read-more">Read More</p>
+							</div>
+						<a href="<?php the_permalink(); ?>" class="faux-link__overlay-link"></a>
+					</article>
+				</div>
+								<?php
 				endwhile;
-				wp_reset_query();
-				endif;
-			?>
-		</div>
+					wp_reset_query();
+					endif;
+				?>
 		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/news" title="news">All news</a>
 	</div>
 </section>
