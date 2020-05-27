@@ -17,16 +17,36 @@
 		background-color: palette(blue, base);
 	}
 
-	a,
+	a, 
 	span {
 		color: palette(white, base);
+		display: block;
+		margin-right: 20px;
 		float: left;
 	}
 
 	.nav-ico {
-		margin-left: 12px;
+		position: relative;
+		margin-left: 20px;
 		margin-right: 12px;
-		margin-top: 5px;
+		margin-top: 3px;
+		float: left;
+
+		&::after {
+			content:"";
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 20px;
+			height: 20px;
+			display: block;
+			left: initial;
+			mask-position: center;
+			mask-repeat: no-repeat;
+			background-color: palette(white, base);
+			mask-image: url(../../dist/img/i/double-right.svg);
+		}
 	}
 
 	.breadcrumb_last {

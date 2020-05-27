@@ -601,3 +601,239 @@ input:focus {
 		letter-spacing: 0.07rem;
 	}
 }
+
+
+.pull-left {
+
+	header.head {
+		padding: 16px 0;
+
+		& + .container {
+			padding-top: 0;
+		}
+	}
+
+	aside {
+		background-color: palette(white, base);
+		border-left: 2px solid rgba(245, 245, 245, 1);
+		padding-left: 0;
+		padding-top: 0;
+
+		@media (max-width: $desktop) {
+			width: 100% !important;
+		}
+
+		.aside-container {
+			width: 100%;
+
+			@media (min-width: $desktop) and (max-width: $bigger-screen) {
+				max-width: 30vw;
+			}
+
+			@media ( max-width: $desktop ) {
+				margin-top: 40px !important;
+			}
+		}
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+
+			li {
+				margin: 12px 0;
+
+				&::before,
+				a::before {
+					width: 30px;
+					background-size: 18px;
+					background-repeat: no-repeat;
+					background-position: left center;
+					position: absolute;
+					bottom: 0;
+					top: 0;
+					left: 0;
+				}
+
+				a {
+					position: relative;
+					padding-left: 32px;
+					color: palette(black, base);
+				}
+
+				&.email {
+
+					a {
+
+						&::before {
+							content: "";
+							background-image: url(../img/icons/envelope-solid.svg);
+						}
+					}
+				}
+
+				&.phone {
+
+					a {
+
+						&::before {
+							content: "";
+							background-image: url(../img/icons/phone-solid.svg);
+						}
+					}
+				}
+
+				&.room {
+					position: relative;
+					padding-left: 32px;
+
+					&::before {
+						content: "";
+						background-size: 14px;
+						background-image: url(../img/icons/map-pin-solid.svg);
+					}
+				}
+			}
+		}
+
+		@media ( max-width: $desktop ) {
+
+			label {
+				border-radius: 4px;
+				padding: 8px 1.5rem;
+				margin: 5px 0 5px 0;
+
+				.aside-title {
+					font-size: 24px;
+					line-height: 32px;
+					padding-left: 16px;
+					position: relative;
+					margin: 0;
+
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						width: calc(100% - 1rem);
+						margin-top: 4px;
+						height: 4px;
+						border-radius: 2px;
+						/* stylelint-disable */
+						background-image: linear-gradient(89deg,rgba(0, 179, 190, 1) 0%,rgba(0, 181, 136, 1) 100%);
+						/* stylelint-enable */
+					}
+				}
+			}
+			margin: -15vh 0 0 0;
+			background: transparent;
+
+			.aside-container {
+				width: calc(100% - 32px);
+				margin: 0 auto;
+				background-color: palette(white, base);
+				border-radius: 8px;
+
+				.aside-items {
+					display: none;
+				}
+			}
+		}
+
+		&.with-margin {
+
+			@media (min-width: $desktop) {
+				margin-top: calc(10vh + 20px);
+			}
+		}
+	}
+
+	.aside-toggle {
+
+		.aside-title {
+			position: relative;
+			padding-bottom: 8px;
+			margin-left: 16px;
+			margin-bottom: 0;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				height: 4px;
+				left: 0;
+				right: 0;
+				background: palette(blue, base);
+				border-radius: 2px;
+			}
+
+			@media ( max-width: $desktop ) {
+				padding-bottom: 0;
+				cursor: pointer;
+
+				&::after {
+					content: "";
+					right: 0;
+					top: 0;
+					bottom: 0;
+					width: 30px;
+					left: initial;
+					background-image: url(../img/icons/chevron-up.svg);
+					background-repeat: no-repeat;
+					background-size: 18px;
+					background-position: center;
+					height: 100%;
+					transform: rotate(180deg);
+					transition: 0.2s ease-in-out transform;
+				}
+			}
+		}
+
+		#toggle-details:checked ~ {
+
+			@media ( max-width: $desktop ) {
+
+				.aside-items {
+					background-color: palette(white, base);
+					padding: 1.5rem;
+					margin-top: -8px;
+					display: block !important;
+				}
+
+				label .aside-title::after {
+					transform: rotate(0);
+				}
+
+				.aside-container {
+
+					.details {
+						display: block !important;
+						padding: 16px;
+					}
+
+					label .aside-title::after {
+						transform: rotate(0);
+					}
+				}
+
+				button[type="submit"] {
+					display: block;
+				}
+			}
+		}
+	}
+
+	main {
+		background-color: palette(white, base);
+		min-height: 50vh;
+		padding: 0 1.5rem;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 50%;
+			margin-left: -100%;
+			background-color: palette(white, base);
+		}
+	}
+}

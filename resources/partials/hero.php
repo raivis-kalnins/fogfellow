@@ -14,6 +14,7 @@ global $dp_args;
 			#hero {
 				background-image: url( '<?php echo esc_url( $dp_args['background_image'] ); ?>' );
 				background-repeat: no-repeat;
+				background-size: cover;
 				height: 50vh;
 			}
 		</style>
