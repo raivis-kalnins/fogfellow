@@ -68,6 +68,13 @@ body.home {
 		h1 {
 			font-weight: $light;
 			color: palette(white, base);
+			text-align: center;
+			margin-top: -32px;
+
+			i {
+				font-size: 0;
+				opacity: 0;
+			}
 		}
 
 		.logo-c {

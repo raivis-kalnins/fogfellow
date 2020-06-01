@@ -83,6 +83,7 @@
 							$image = get_sub_field('image');
 							$title = get_sub_field('title');
 							$content = get_sub_field('description');
+							$drawing = get_sub_field('drawing');
 							$n = $i++;
 							?>
 							<li>
@@ -91,17 +92,26 @@
 								<ul class="tab-content-container">
 									<li class="tab-content columns">
 										<div class="column is-full-tablet is-4">
-											<div class="image-box">
-											<a data-fancybox="gallery" href="<?php echo $image['url']; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
+											<div class="image-box faux-link__element">
+												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+												<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" data-animation-duration="700" class="faux-link__overlay-link"></a>
 											</div>
 										</div>
 										<div class="column is-full-tablet is-8">
 											<?php echo $content; ?>
-											<span class="button--green btn-desc-<?php echo $n; ?>">Read more</span>
+											<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" class="button--green btn-desc-<?php echo $n; ?>" data-animation-duration="700">Read more</a>
 											<div class="arrows">
 												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
 												<label class="next tab-<?php echo $n + 1; if( $n == $rowCount) { echo ' last'; } ?>" for="tab-<?php echo $n + 1; ?>">&#8250;</label>   
 											</div>
+										</div>
+										<?php /* Popup content */ ?>
+										<div id="id-<?php echo $n; ?>" style="display:none" class="animated-modal">
+											<h2><?php echo $title; ?></h2>
+											<?php echo $content; ?>
+											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+											<hr />
+											<img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt'] ?>" />
 										</div>
 									</li>
 								</ul>
@@ -155,6 +165,8 @@
 					endif;
 				?>
 			</div>
+			<div class="swiper-button-prev swiper-button-white"></div>
+			<div class="swiper-button-next swiper-button-white"></div>
 		</div>
 		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/shop" title="Shop">All products</a>
 	</div>

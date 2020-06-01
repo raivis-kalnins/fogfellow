@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	overflow-y: auto;
 
 	&.no-js {
 		margin-top: 0 !important;
@@ -17,7 +18,9 @@ body {
 	width: 100vw;
 	height: 100%;
 
-	&.modal-win {
+	&.modal-win,
+	&.fancybox-active {
+		max-height: 100vh;
 		overflow: hidden;
 	}
 }

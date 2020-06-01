@@ -80,6 +80,9 @@ function initialise() {
 	/* Modal */
 	$(".modal-button").click(function() {
 		$("#modal-cart").addClass("is-active");
+	});
+
+	$(".modal-button").click(function() {
 		$("html").addClass("modal-win");
 	});
 
@@ -87,6 +90,9 @@ function initialise() {
 		$("#modal-cart").removeClass("is-active");
 		$("html").removeClass("modal-win");
 	});
+
+	// Add Fancybox for img
+	$(".single-content img").parent("a").attr("data-fancybox","gallery").addClass("content-img");
 
 	// End Initialise
 };
@@ -98,9 +104,9 @@ $(document).ready(function () {
 
 // Homepage Swiper
 if ( document.body.classList.contains('home') ) {
-	var swiper_home = new Swiper('.home .swiper-container', {
+	var swiper_home = new Swiper('.home #shop .swiper-container', {
 		slidesPerGroup: 1,
-		autoplay: true,
+		autoplay: false,
 		speed: 800,
 		loop: true,
 		lazy: true,
@@ -112,7 +118,7 @@ if ( document.body.classList.contains('home') ) {
 			enabled: true,
 			onlyInViewport: false,
 		},
-		pagination: false,
+		pagination: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
@@ -124,12 +130,8 @@ if ( document.body.classList.contains('home') ) {
                 slidesPerView: 4,
 			},
 			1400: {
-                slidesPerView: 3,
+                slidesPerView: 4,
 			}
-			,
-			1600: {
-                slidesPerView: 2,
-            }
 		}
 	});
 }
