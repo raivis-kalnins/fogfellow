@@ -43,12 +43,14 @@
 		<div class="column is-8 rellax home-img" data-rellax-speed="7" data-rellax-xs-speed="5">
 			<?php if ( has_post_thumbnail( $_post->ID ) ) : ?>
 				<div class="about-img animated fadeIn">
-					<img src="<?php 
-					if ( wp_is_mobile() ) { 
-						echo the_post_thumbnail_url(null, "small"); 
-					} else { 
-						echo the_post_thumbnail_url(null, "full"); 
-					} ?>" alt="" class="lazyload" />
+					<a href="<?php echo the_post_thumbnail_url(null, "full"); ?>" data-fancybox="image">
+						<img src="<?php 
+						if ( wp_is_mobile() ) { 
+							echo the_post_thumbnail_url(null, "small"); 
+						} else { 
+							echo the_post_thumbnail_url(null, "full"); 
+						} ?>" alt="" class="lazyload" />
+					</a>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -99,7 +101,8 @@
 											</div>
 										</div>
 										<div class="column is-full-tablet is-8">
-											<?php _e( sb_truncate( $content, 150 ) ); ?>
+											<h3><?php echo $title; ?></h3>
+											<?php _e( sb_truncate( $content, 180 ) ); ?>
 											<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" class="button--green btn-desc-<?php echo $n; ?>" data-animation-duration="700">Read more</a>
 											<div class="arrows">
 												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
@@ -111,9 +114,9 @@
 											<h2><?php echo $title; ?></h2>
 											<?php echo $content; ?>
 											<hr />
-											<a href="<?php echo $pop_image['url']; ?>" data-fancybox="images"><img src="<?php echo $pop_image['url']; ?>" alt="<?php echo $pop_image['alt'] ?>" /></a>
+											<a href="<?php echo $pop_image['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $pop_image['url']; ?>" alt="<?php echo $pop_image['alt'] ?>" /></a>
 											<hr />
-											<a href="<?php echo $drawing['url']; ?>" data-fancybox="images"><img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt'] ?>" /></a>
+											<a href="<?php echo $drawing['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt'] ?>" /></a>
 										</div>
 									</li>
 								</ul>
@@ -133,7 +136,7 @@
 				<?php
 					$args_shop = array(
 						'post_type'      => 'shop',
-						'posts_per_page' => 12,
+						'posts_per_page' => 20,
 					);
 					$loop_shop = new WP_Query( $args_shop );
 					if ( have_posts() ) :

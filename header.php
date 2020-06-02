@@ -59,13 +59,10 @@
 								endif;
 							?>
 						</div>
-						<div class="cart-top">
-							<button type="button" class="btn-cart button modal-button" data-toggle="modal" data-target="modal"><span class="total-count"></span></button>
-							<span class="clear-cart"></span>
-						</div>
-						<div class="soc-top hidden">
-							<a href="https://www.facebook.com" class="soc fb" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
-						</div>
+					</div>
+					<div class="cart-top">
+						<button type="button" class="btn-cart button modal-button" data-toggle="modal" data-target="modal"><span class="total-count"></span></button>
+						<span class="clear-cart"></span>
 					</div>
 				</div>
 			</nav>

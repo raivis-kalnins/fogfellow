@@ -27,9 +27,9 @@
 
 	.nav-ico {
 		position: relative;
-		margin-left: 20px;
-		margin-right: 12px;
-		margin-top: 3px;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-top: 5px;
 		float: left;
 
 		&::after {
@@ -38,14 +38,14 @@
 			right: 0;
 			top: 0;
 			bottom: 0;
-			width: 20px;
-			height: 20px;
+			width: 15px;
+			height: 14px;
 			display: block;
 			left: initial;
 			mask-position: center;
 			mask-repeat: no-repeat;
 			background-color: palette(white, base);
-			mask-image: url(../../dist/img/i/double-right.svg);
+			mask-image: url(../../dist/img/i/chevron-right-solid.svg);
 		}
 	}
 

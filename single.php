@@ -50,7 +50,7 @@ dp_get_template_part(
 			<div class="aside-container">
 				<input class="hidden" type="checkbox" name="toggle-details" id="toggle-details" />
 				<label class="is-block has-background-white" for="toggle-details">
-					<h3 class="aside-title">In this section</h3>
+					<h3 class="aside-title">Other sections</h3>
 				</label>
 				<span class="aside-items">
 					<?php get_sidebar(); ?>

@@ -211,6 +211,7 @@ body.home {
 	
 				img {
 					border: palette(green, base) solid 5px;
+					transition: all 0.5s ease-out;
 					border-radius: 8px;
 					position: relative;
 					max-width: 570px;
@@ -220,6 +221,13 @@ body.home {
 						max-width: 100%;
 						margin: 0 auto;
 						float: none;
+					}
+				}
+
+				&:hover {
+
+					img {
+						transform: scale(1.1);
 					}
 				}
 			}
