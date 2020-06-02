@@ -81,6 +81,7 @@
 						<?php while( have_rows('products') ): 
 							the_row();
 							$image = get_sub_field('image');
+							$pop_image = get_sub_field('pop_image');
 							$title = get_sub_field('title');
 							$content = get_sub_field('description');
 							$drawing = get_sub_field('drawing');
@@ -109,9 +110,10 @@
 										<div id="id-<?php echo $n; ?>" style="display:none" class="animated-modal">
 											<h2><?php echo $title; ?></h2>
 											<?php echo $content; ?>
-											<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
 											<hr />
-											<img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt'] ?>" />
+											<a href="<?php echo $pop_image['url']; ?>" data-fancybox="images"><img src="<?php echo $pop_image['url']; ?>" alt="<?php echo $pop_image['alt'] ?>" /></a>
+											<hr />
+											<a href="<?php echo $drawing['url']; ?>" data-fancybox="images"><img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt'] ?>" /></a>
 										</div>
 									</li>
 								</ul>

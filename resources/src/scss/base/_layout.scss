@@ -80,6 +80,10 @@ input:focus {
 	background: palette(green, base);
 }
 
+.fancybox-slide--html img {
+	width: 100%;
+}
+
 .background {
     background-size: cover;
     background-position: center center;
