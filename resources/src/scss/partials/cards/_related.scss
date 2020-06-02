@@ -52,6 +52,8 @@
 				font-size: 18px;
 				line-height: 24px;
 				font-weight: $black;
+				min-height: 48px;
+				margin-top: 10px;
 			}
 
 			span {
@@ -84,7 +86,12 @@
 		margin-bottom: 0;
 
 		@media (max-width: $desktop) {
-			height: 184px;
+			height: auto;
+			padding: 16px;
+
+			h4 {
+				margin-top: 15px;
+			}
 		}
 
 		.thumbnail {
@@ -106,7 +113,7 @@
 			overflow: hidden;
 			bottom: 0;
 
-			@media (min-width: $desktop) {
+			@media (max-width: $desktop) {
 				position: relative;
 				left: 0;
 				bottom: -16px;

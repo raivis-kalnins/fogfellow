@@ -37,8 +37,7 @@ body.archive {
 					&::before {
 						content: "";
 						position: absolute;
-						top: 12px;
-						margin: 8px -3.8rem;
+						margin: 10px -3.8rem;
 						width: 3rem;
 						height: 30px;
 						mask-position: center;
@@ -51,9 +50,36 @@ body.archive {
 
 				.shop-desc {
 					padding-left: 0.75rem;
+					font-weight: $regular;
 				}
 			}
 		}
 
+		article.card {
+
+			.card-price {
+				position: absolute;
+				padding-left: 16px;
+				padding-right: 16px;
+				margin-top: -40px;
+				background: rgba(palette(green, base), 0.8);
+				color: palette(blue, base);
+				border-radius: 0 4px 4px 0;
+			}
+
+			.content {
+
+				.shop-btn {
+					width: calc(100% - 32px);
+					position: absolute;
+					bottom: 16px;
+					z-index: 3;
+
+					.read-more-shop {
+						float: right;
+					}
+				}
+			}
+		}
 	}
 }

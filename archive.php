@@ -33,25 +33,38 @@ get_template_part( '/resources/partials/hero' );
 						<?php echo $term_desc; ?>
 					</div>
 					<?php if ( have_posts() ) : ?>
-					<div class="columns is-mobile">
+					<div class="columns">
 						<?php
 							while ( have_posts() ) :
 							the_post();
 							$background = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
+							$slug = $post->post_name;
+							$price = get_field('price');
 						?>
 						<div class="column is-full-mobile is-half-tablet is-4-desktop">
 							<!-- article -->
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'card card--archive faux-link__element' ); ?>>
 								<div class="post-img"></div>
+								<?php if ( get_post_type( $post_id ) === 'shop' ) : ?>
+									<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
+								<?php endif; ?>
 								<div class="post-details">
-									<h3><?php esc_html_e( sb_truncate( get_the_title(), 56 ) ); ?></h3>
+									<h3 data-title="<?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?>"><?php esc_html_e( sb_truncate( get_the_title(), 56 ) ); ?></h3>
 									<span class="content">
-						<?php
+							<?php
 							if ( is_category() || is_archive() ) {
 								// the_excerpt();
 								} else {
 								the_content();
 								}
+							if ( get_post_type( $post_id ) === 'shop' ) :
+							?>
+							<div class="shop-btn">
+								<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
+								<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
+							</div>
+							<?php
+								endif;
 							?>
 										<a href="<?php the_permalink(); ?>" class="faux-link__overlay-link"></a>
 									</span>

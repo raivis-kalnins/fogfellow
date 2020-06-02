@@ -16,7 +16,7 @@ body.home {
 			display: none;
 		}
 
-		&.sticked .container .navbar-brand {
+		&.fixed .container .navbar-brand {
 			display: block;
 		}
 
@@ -86,9 +86,30 @@ body.home {
 		background-color: palette(blue, base);
 		position: relative;
 
+		@media (max-width: $tablet) {
+			padding-left: 5px !important;
+			padding-right: 5px !important;
+
+			h2 {
+				padding-left: 0.75rem;
+			}
+		}
+
 		&.sc1 {
 			padding-top: 300px;
 			padding-bottom: 0;
+
+			@media (max-width: $tablet) {
+				padding-top: 200px;
+			}
+
+			.wp-block-group {
+
+				@media (max-width: $tablet) {
+					width: 90%;
+					margin: 0 auto;
+				}
+			}
 
 			&::before {
 				content: "";
@@ -130,6 +151,10 @@ body.home {
 					left: -15px;
 					top: 50%;
 					margin-top: -40px;
+
+					@media (max-width: $tablet) {
+						left: -2px;
+					}
 				}
 
 				&::after {
@@ -137,6 +162,10 @@ body.home {
 					right: -35px;
 					background: linear-gradient(88deg, palette(green, base), palette(white, base));
 					mask-image: url('data:image/svg+xml;charset=utf-8,<svg aria-hidden="true" data-prefix="fas" data-icon="quote-right" class="svg-inline--fa fa-quote-right fa-w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z"/></svg>');
+
+					@media (max-width: $tablet) {
+						right: -22px;
+					}
 				}
 
 				p {
@@ -186,6 +215,12 @@ body.home {
 					position: relative;
 					max-width: 570px;
 					float: right;
+
+					@media (max-width: $tablet) {
+						max-width: 100%;
+						margin: 0 auto;
+						float: none;
+					}
 				}
 			}
 		}
@@ -213,8 +248,12 @@ body.home {
 			padding: 40px;
 
 			@media (max-width: $tablet) {
-				margin-top: -500px;
+				margin-top: -750px;
 				min-height: 750px;
+
+				h2 {
+					padding-left: 0;
+				}
 			}
 
 			.bl-content {
@@ -238,10 +277,14 @@ body.home {
 						background: transparent;
 						color: palette(blue, base);
 						position: absolute;
-						right: 100px;
 						margin-bottom: 1.5rem;
 						bottom: 0;
 						cursor: pointer;
+
+						@media (max-width: $tablet) {
+							position: relative;
+							margin-left: 0;
+						}
 
 						&:hover {
 							background-color: palette(green, base);
@@ -255,6 +298,10 @@ body.home {
 						bottom: 1.5rem;
 						right: 0;
 						position: absolute;
+
+						@media (max-width: $tablet) {
+							bottom: 3rem;
+						}
 
 						label {
 							display: inline-block;
@@ -315,8 +362,14 @@ body.home {
 										width: 100%;
 										height: 218px;
 
+										@media (max-width: $tablet) {
+											height: 180px;
+										}
+
 										img {
 											transition: all 0.5s ease-out;
+											width: 100%;
+											height: 100%;
 											cursor: pointer;
 										}
 
@@ -324,7 +377,7 @@ body.home {
 											
 											img {
 												position: absolute;
-												transform: scale(1.4);
+												transform: scale(1.1);
 											}
 										}
 									}
@@ -364,11 +417,12 @@ body.home {
 						&.active + .tab,
 						&:checked + .tab {
 							color: palette(blue, base);
+							background-color: palette(white, base);
 							border-color: palette(white, base);
 							border-radius: 8px 8px 0 0;
 							opacity: 1;
 
-							@include bg-h-to-top(palette(white, base), palette(grey, base));
+							//@include bg-h-to-top(palette(white, base), palette(grey, base));
 						}
 
 						&.hover ~ .tab-content-container,
@@ -448,11 +502,23 @@ body.home {
 			}
 		}
 
+		&.sc4.sc-news {
+
+			.bl-content .card {
+
+				h4 {
+					min-height: inherit;
+					margin-top: 10px;
+					margin-bottom: 5px;
+				}
+			}
+		}
+
 		.bl-content {
 			width: 100%;
+			margin: 0 auto;
 
 			.card {
-				height: 100%;
 				border-radius: 8px;
 				overflow: hidden;
 
@@ -521,8 +587,16 @@ body.home {
 		background-color: transparent;
 		position: relative;
 
+		@media (max-width: $tablet) {
+			height: 150px;
+		}
+
 		& + section + .d-container {
 			margin-top: -500px;
+
+			@media (max-width: $tablet) {
+				margin-top: -50px;
+			}
 		}
 
 		.diagonal {

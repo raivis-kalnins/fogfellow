@@ -99,7 +99,7 @@
 											</div>
 										</div>
 										<div class="column is-full-tablet is-8">
-											<?php echo $content; ?>
+											<?php _e( sb_truncate( $content, 150 ) ); ?>
 											<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" class="button--green btn-desc-<?php echo $n; ?>" data-animation-duration="700">Read more</a>
 											<div class="arrows">
 												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
@@ -144,21 +144,21 @@
 				?>
 				<div class="column swiper-slide is-full-mobile is-half-tablet is-3">
 					<article class="card card--related all-shop faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
-						<div class="thumbnail" style="background-image:url( 
+						<a href="<?php the_permalink(); ?>"><div class="thumbnail" style="background-image:url( 
 								<?php
 								if ( $bg_shop ) {
 									echo $bg_shop; }
 									$post = get_post( $post_id );
 									$slug = $post->post_name;
 								?>
-							)"></div>
-							<div class="main has-color-black has-background-white">
-								<h3 class="is-4" data-title="<?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?>"><?php esc_html_e( sb_truncate( get_the_title(), 55 ) ); ?></h3>
-								<div class="card-desc"><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></div>
-								<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
-								<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
-								<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
-							</div>
+							)"></div></a>
+						<div class="main has-color-black has-background-white">
+							<h3 class="is-4" data-title="<?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?>"><?php esc_html_e( sb_truncate( get_the_title(), 55 ) ); ?></h3>
+							<div class="card-desc"><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></div>
+							<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
+							<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
+							<a href="<?php the_permalink(); ?>" class="read-more-shop button--fullgrey button">Read More</a>
+						</div>
 					</article>
 				</div>
 				<?php

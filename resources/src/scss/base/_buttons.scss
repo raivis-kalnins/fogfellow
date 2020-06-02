@@ -191,9 +191,9 @@
 	background-color: palette(green, base);
 	bottom: -10px;
     right: 20px;
-    width: 40px;
+    width: 50px;
     height: 40px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 4px 4px 0 0;
     z-index: 999;
 	cursor: pointer;
 	opacity: 0.4;
@@ -204,7 +204,7 @@
 		position: absolute;
 		left: 50%;
 		margin-left: -10px;
-		margin-top: 5px;
+		margin-top: 7px;
 		mask-position: center;
 		mask-repeat: no-repeat;
 		background-color: white;
@@ -216,7 +216,7 @@
 	
 	&:hover {
 		bottom: 0;
-		opacity: 1;
+		opacity: 0.9;
 	}
 }
 

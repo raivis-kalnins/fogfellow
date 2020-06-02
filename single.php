@@ -11,6 +11,8 @@ get_header();
 while ( have_posts() ) :
 the_post();
 $background = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
+$slug = $post->post_name;
+$price = get_field('price');
 /**
  * Get the stripe header.
  */
@@ -35,6 +37,10 @@ dp_get_template_part(
 				<article class="head columns is-marginless">
 					<div class="single-content is-paddingless column is-full">
 						<?php the_content(); ?>
+						<?php if ( get_post_type( $post_id ) === 'shop' ) : ?>
+							<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
+							<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
+						<?php endif; ?>
 						<?php edit_post_link(); // Always handy to have Edit Post Links available. ?>
 					</div>
 				</article>

@@ -10,10 +10,10 @@ function initialise() {
 
 	function onScroll() {
 		if ($(window).scrollTop() < 30) {
-			$('.navbar').removeClass('sticked');
+			$('.navbar').removeClass('fixed');
 			$('.scroll-up').addClass('hidden');
 		} else {
-			$('.navbar').addClass('sticked');
+			$('.navbar').addClass('fixed');
 			$('.scroll-up').removeClass('hidden');
 		}
 	}
