@@ -52,21 +52,22 @@ a {
 }
 
 .read-more {
-	color: $white-base;
+	color: palette(green, base);
 	transition: color $base-duration $base-timing;
 	position: absolute;
 	bottom: 8px;
 	font-size: 12px;
 	line-height: 16px;
-	font-weight: $black;
+	font-weight: $regular;
 
 	&::after {
 		content: "";
 		width: 12px;
 		height: 12px;
 		display: block;
+		background-image: url(../img/i/angle-double-right-green.svg);
 		background-repeat: no-repeat;
-		transition: all 0.3s ease-out;
+		transition: all .3s ease-out;
 		position: absolute;
 		top: 2px;
 		left: 67px;
@@ -185,7 +186,7 @@ p,
 	margin: 0 0 $small-spacing;
 	font-size: 16px;
 	line-height: 24px;
-	font-weight: $light;
+	font-weight: $regular;
 }
 
 hr {

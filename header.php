@@ -32,17 +32,31 @@
 					<div class="navbar-menu">
 						<div class="navbar-end">
 							<?php
-							wp_nav_menu(
-								array(
-									'menu'        => 'Main menu',
-									'depth'       => 3,
-									'container'   => '',
-									'menu_class'  => '',
-									'items_wrap'  => '%3$s',
-									'walker'      => new Bulma_Menu_Walker(),
-									'fallback_cb' => 'Bulma_Menu_Walker::fallback',
-								)
-								);
+								if( is_front_page() ) :
+									wp_nav_menu(
+										array(
+											'menu'        => 'Main menu',
+											'depth'       => 3,
+											'container'   => '',
+											'menu_class'  => '',
+											'items_wrap'  => '%3$s',
+											'walker'      => new Bulma_Menu_Walker(),
+											'fallback_cb' => 'Bulma_Menu_Walker::fallback',
+										)
+									);
+								else:
+									wp_nav_menu(
+										array(
+											'menu'        => 'Sidebar menu',
+											'depth'       => 3,
+											'container'   => '',
+											'menu_class'  => '',
+											'items_wrap'  => '%3$s',
+											'walker'      => new Bulma_Menu_Walker(),
+											'fallback_cb' => 'Bulma_Menu_Walker::fallback',
+										)
+									);
+								endif;
 							?>
 						</div>
 						<div class="cart-top">
