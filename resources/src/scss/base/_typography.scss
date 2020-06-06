@@ -102,14 +102,15 @@ strong {
 }
 
 h1,
-.h1 {
+.h1,
+h1.is-1 {
 	font-size: 40px;
 	line-height: 48px;
 	font-family: $heading-font-family;
 
 	@media (max-width: $mobile) {
-		font-size: 32px;
-		line-height: 40px;
+		font-size: 32px !important;
+		line-height: 40px !important;
 	}
 }
 

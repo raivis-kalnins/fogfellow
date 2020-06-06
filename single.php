@@ -38,9 +38,19 @@ dp_get_template_part(
 					<div class="single-content is-paddingless column is-full">
 						<?php the_content(); ?>
 						<?php if ( get_post_type( $post_id ) === 'shop' ) : ?>
+							<hr />
 							<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
 							<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
 						<?php endif; ?>
+						<?php 
+							if ( get_post_type( $post_id ) === 'shop' ) :
+								if ( ! empty( get_option( 'shop-desc-star' ) ) ) : 
+						?>
+						<br /><br /><p class="shop-desc-star"><?php echo get_option( 'shop-desc-star' ); ?></p>
+						<?php 
+								endif;
+							endif;
+						?>
 						<?php edit_post_link(); // Always handy to have Edit Post Links available. ?>
 					</div>
 				</article>
@@ -49,7 +59,7 @@ dp_get_template_part(
 		<aside class="aside-toggle column is-4 is-flex with-margin">
 			<div class="aside-container">
 				<input class="hidden" type="checkbox" name="toggle-details" id="toggle-details" />
-				<label class="is-block has-background-white" for="toggle-details">
+				<label class="is-block" for="toggle-details">
 					<h3 class="aside-title">Other sections</h3>
 				</label>
 				<span class="aside-items">

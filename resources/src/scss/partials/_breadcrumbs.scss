@@ -18,7 +18,8 @@
 	}
 
 	a, 
-	span {
+	& > span,
+	& > span > span {
 		color: palette(white, base);
 		display: block;
 		margin-right: 20px;
@@ -56,12 +57,13 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+		float: left;
 
 		@media ( max-width: $tablet ) {
-			max-width: 24vw;
-			max-height: 24px;
+			max-width: 27vw;
 			overflow: hidden;
 			display: block;
+			white-space: normal;
 		}
 	}
 }

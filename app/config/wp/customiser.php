@@ -108,6 +108,28 @@ function register_additional_customizer_settings( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'shop-desc-star',
+		array(
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+		);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'shop-desc-star',
+			array(
+				'label'       => __( 'Shop comment', 'textdomain' ),
+				'description' => __( 'Shop comment *', 'textdomain' ),
+				'priority'    => 10,
+				'section'     => 'title_tagline',
+				'type'        => 'textarea',
+			)
+		)
+	);
+
 
 	/**
 	 * New Homepage Media section
