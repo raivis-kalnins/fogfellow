@@ -12,13 +12,13 @@
  */
 function dp_enqueue_scripts_and_styles() {
 
-	$style_time = file_exists( get_stylesheet_directory() . '/css/style.min.css' ) ? filemtime( get_stylesheet_directory() . '/css/style.min.css' ) : false;
+	$style_time = file_exists( get_stylesheet_directory() . '/resources/dist/css/style.min.css' ) ? filemtime( get_stylesheet_directory() . '/resources/dist/css/style.min.css' ) : false;
 
-	// Register styles
+	// Register style
 	wp_register_style( 'css_swiper', dp_assets( 'vendor/swiper/css/swiper.min.css' ), array(), $style_time );
 	wp_register_style( 'css_rellax', dp_assets( 'vendor/rellax/css/main.min.css' ), array(), $style_time );
 	wp_register_style( 'css_fancybox', dp_assets( 'vendor/fancybox/jquery.fancybox.min.css' ), array(), $style_time );
-	wp_register_style( 'styles', dp_assets( 'css/style.min.css' ), array(), $style_time );
+	wp_register_style( 'styles', dp_assets( 'css/style.min.css?'.$style_time ), array(), $style_time );
 
 	// Register scripts
 	wp_register_script( 'polyfill', '//cdn.polyfill.io/v2/polyfill.min.js?callback=polyfillsLoaded', array(), '', true );
