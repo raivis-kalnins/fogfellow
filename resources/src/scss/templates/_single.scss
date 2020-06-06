@@ -5,6 +5,18 @@ body.single {
 		width: 24%;
 		margin-top: 2%;
 		margin-right: 1%;
+
+		img {
+			border: palette(green, base) solid 3px;
+			border-radius: 8px;
+		}
+	}
+
+	figure[name="core-gallery-images"] {
+
+		a.content-img {
+			width: 100%;
+		}
 	}
 
 	.single-content {

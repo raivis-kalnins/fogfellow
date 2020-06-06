@@ -49,7 +49,7 @@ function render_core_gallery( $attributes, $content ) {
 			$figures .= sprintf(
 				'<input type="radio" class="hidden hidden--fixed" name="core-gallery-images" id="%3$s" />
 				<figure id="%1$s" name="core-gallery-images" class="is-hidden column is-12 faux-link__element">
-					<img src="%2$s" />
+					<a href="%2$s" data-fancybox="image"><img src="%2$s" /></a>
 				</figure>',
 				esc_attr( 'core-gallery-' . $image_id ),
 				esc_url( $attachment_image ),
