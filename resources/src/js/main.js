@@ -77,6 +77,13 @@ function initialise() {
 		});
 	}
 
+	/* Menu items */
+	$(".navbar-item").click(function() {
+		setTimeout(function () {
+			$(".hm-input").click();
+		}, 200);
+	});
+
 	/* Modal */
 	$(".modal-button").click(function() {
 		$("#modal-cart").addClass("is-active");
@@ -278,8 +285,8 @@ var shoppingCart = (function() {
 
 	// Clear cart
 	obj.clearCart = function() {
-	cart = [];
-	saveCart();
+		cart = [];
+		saveCart();
 	}
 
 	// Count cart 
@@ -336,6 +343,7 @@ $('.add-to-cart').click(function(event) {
 $('.clear-cart').click(function() {
 	shoppingCart.clearCart();
 	displayCart();
+	console.log('clicked');
 });
 
 
@@ -358,6 +366,11 @@ function displayCart() {
 	$('.show-cart').html(output);
 	$('.total-cart').html(shoppingCart.totalCart());
 	$('.total-count').html(shoppingCart.totalCount());
+	if ( shoppingCart.totalCount() >=1 ) {
+		$('.total-count, .clear-cart').removeClass('hidden');
+	} else {
+		$('.total-count, .clear-cart').addClass('hidden');
+	}
 }
 
 // Delete item button

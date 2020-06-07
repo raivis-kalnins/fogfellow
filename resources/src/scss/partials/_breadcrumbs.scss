@@ -60,10 +60,7 @@
 		float: left;
 
 		@media ( max-width: $tablet ) {
-			max-width: 27vw;
-			overflow: hidden;
-			display: block;
-			white-space: normal;
+			max-width: 70px;
 		}
 	}
 }

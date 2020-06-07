@@ -24,10 +24,15 @@
 		<div class="scroller_header"><div id="scroll-line"></div></div>
 		<main role="main">
 			<nav class="navbar" role="navigation" aria-label="main navigation">
-				<button id="m-nav" class="hidden"></button>
-				<div class="container">
+				<label class="container">
 					<div class="navbar-brand">
 						<a href="<?php echo home_url(); ?>" class="logo"><img src="<?php echo $logo_s; ?>" alt="Logo - <?php echo $logo_alt; ?>" /></a>
+					</div>
+					<input class="hm-input" type="checkbox">
+					<div id="menu-hm">
+						<i class="hm-line first"></i>
+						<i class="hm-line second"></i>
+						<i class="hm-line third"></i>
 					</div>
 					<div class="navbar-menu">
 						<div class="navbar-end">
@@ -62,9 +67,9 @@
 					</div>
 					<div class="cart-top">
 						<button type="button" class="btn-cart button modal-button" data-toggle="modal" data-target="modal"><span class="total-count"></span></button>
-						<span class="clear-cart"></span>
+						<button type="button"  class="clear-cart"></button>
 					</div>
-				</div>
+				</label>
 			</nav>
 			<?php if(is_front_page()) : ?>
 				<div class="waveHorizontals">

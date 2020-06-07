@@ -158,6 +158,10 @@ figure.wp-block-embed-youtube {
 		border-radius: 8px;
 	}
 
+	figure.column.is-12 img {
+		border: 2px solid #bfd730;
+	}
+
 	.toggle-images {
 		height: 100%;
 		text-align: center;
@@ -179,7 +183,7 @@ figure.wp-block-embed-youtube {
 		display: block !important;
 	}
 
-	@media ( min-width: 420px ) and ( max-width: $tablet ) {
+	@media ( max-width: $tablet ) {
 
 		.is-multiline {
 
@@ -207,6 +211,8 @@ figure.wp-block-embed-youtube {
 
 			.single-image {
 				display: none;
+				width: 25%;
+				float: left;
 			}
 		}
 	}
