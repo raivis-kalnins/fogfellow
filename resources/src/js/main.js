@@ -101,6 +101,11 @@ function initialise() {
 	// Add Fancybox for img
 	$(".single-content img").parent("a").attr("data-fancybox","gallery").addClass("content-img");
 
+	// Menu Plus
+	$(".plus a").click(function() {
+		$(".menu-plus").toggleClass("menu__open");
+	});
+
 	// End Initialise
 };
 $(document).ready(function () {

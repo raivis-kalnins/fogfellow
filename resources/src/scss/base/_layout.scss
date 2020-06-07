@@ -193,7 +193,7 @@ input:focus {
 				height: 3px;
 				display: block;
 				border-radius: 3px;
-				transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+				transition: transform 0.4s cubic-bezier(0.54, -0.86, 0.57, 0.57);
 				position: relative;
 				
 				&.first,
@@ -209,8 +209,8 @@ input:focus {
 
 			@media (max-width: $tablet) {
 				position: relative;
-				width: 31px;
-				height: 31px;
+				width: 32px;
+				height: 32px;
 				display: inline-flex;
 				flex-direction: column;
 				justify-content: space-between;
@@ -248,7 +248,7 @@ input:focus {
 					}
 
 					&.third {
-						transform: translate(7px, -1px) rotate(-135deg);
+						transform: translate(8px, -1px) rotate(-135deg);
 					}
 				}
 			}
@@ -262,6 +262,7 @@ input:focus {
 				background-color: rgba(palette(blue, base), 0.75);
 				height: 100vh;
 				padding-top: 40px;
+				margin-top: 10px;
 				overflow-y: auto;
 			}
 
@@ -809,7 +810,7 @@ input:focus {
 				&::before {
 					content: "";
 					position: absolute;
-					margin: 1px 15px;
+					margin: 1px 18px;
 					width: 20px;
 					height: 20px;
 					mask-position: center;
