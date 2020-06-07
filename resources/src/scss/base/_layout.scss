@@ -800,10 +800,34 @@ input:focus {
 
 				a {
 					position: relative;
-					padding-left: 22px;
+					padding-left: 47px;
 					color: palette(black, base);
 					text-transform: capitalize;
 					z-index: 3;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					margin: 1px 15px;
+					width: 20px;
+					height: 20px;
+					mask-position: center;
+					mask-repeat: no-repeat;
+					mask-size: 100%;
+					background-color: palette(green, base);
+				}
+
+				&:nth-child(1)::before {
+					mask-image: url(../../dist/img/i/home-solid.svg);
+				}
+
+				&:nth-child(2)::before {
+					mask-image: url(../../dist/img/i/shopping-cart-solid.svg);
+				}
+
+				&:nth-child(3)::before {
+					mask-image: url(../../dist/img/i/newspaper-regular.svg);
 				}
 			}
 		}
@@ -974,6 +998,12 @@ input:focus {
 
 #cookie-law-info-again {
 	border-radius: 4px 4px 0 0;
+	box-shadow: palette(grey, base) 0 1px 3px 1px;
 	left: 40px !important;
 	text-transform: uppercase;
+	opacity: 0.4;
+
+	&:hover {
+		opacity: 0.95;
+	}
 }
