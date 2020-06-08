@@ -89,6 +89,18 @@ input:focus {
 	width: 100%;
 }
 
+#prline {
+	background: palette(green, base);
+	transition: all 0.3s ease-out;
+	margin-bottom: -2px;
+	width: 0;
+	height: 2px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
+
 .background {
     background-size: cover;
     background-position: center center;
@@ -259,7 +271,7 @@ input:focus {
 			z-index: 2;
 
 			@media (max-width: $tablet) {
-				background-color: rgba(palette(blue, base), 0.75);
+				background-color: rgba(palette(blue, base), 0.95);
 				height: 100vh;
 				padding-top: 40px;
 				margin-top: 10px;
@@ -1001,6 +1013,7 @@ input:focus {
 	border-radius: 4px 4px 0 0;
 	box-shadow: palette(grey, base) 0 1px 3px 1px;
 	left: 40px !important;
+	padding-top: 6px;
 	text-transform: uppercase;
 	opacity: 0.4;
 

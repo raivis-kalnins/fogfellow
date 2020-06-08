@@ -21,7 +21,7 @@
 	</head>
 	<body <?php body_class(); ?> id="root">
 		<?php do_action( 'after_body_open_tag' ); ?>
-		<div class="scroller_header"><div id="scroll-line"></div></div>
+		<div id="prline"></div>
 		<main role="main">
 			<nav class="navbar" role="navigation" aria-label="main navigation">
 				<label class="container">

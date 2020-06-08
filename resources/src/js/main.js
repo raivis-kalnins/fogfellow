@@ -21,6 +21,16 @@ function initialise() {
 	window.addEventListener("scroll", function() {
         onScroll();
 	}, true);
+
+	// Progress line
+	function progressLine() {
+		var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+		var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		var scrolled = (winScroll / height) * 100;
+		document.getElementById("prline").style.width = scrolled + "%";
+	}
+	window.onscroll = function() { progressLine() };
+	// End Progress line
 	
 	function mob_menu() {
         var win = $(window);
