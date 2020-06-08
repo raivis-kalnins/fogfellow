@@ -1,3 +1,13 @@
+input:focus,
+select:focus,
+select:active, 
+select:hover,
+textarea:focus,
+button:focus,
+*:focus {
+	outline: none !important;
+}
+
 fieldset {
 	background-color: transparent;
 	border: 0;
@@ -5,78 +15,73 @@ fieldset {
 	padding: 0;
 }
 
-legend {
-	font-weight: 600;
-	margin-bottom: $small-spacing / 2;
-	padding: 0;
-}
-
-label {
-	display: block;
-	font-weight: 600;
-	margin-bottom: $small-spacing / 2;
-}
-
 input,
 select,
 textarea {
+	background-color: transparent;
+	border-color: palette(white, base);
+	border-width: 0 0 1px 0;
+	color: palette(white, base);
+	font-size: 15px;
 	display: block;
-	font-family: $base-font-family;
-	font-size: $base-font-size;
-}
+	transition: all 0.3s ease-out;
 
-#{$all-text-inputs} {
-	appearance: none;
-	background-color: $base-background-color;
-	border: $base-border;
-	border-radius: $base-border-radius;
-	box-shadow: $form-box-shadow;
-	box-sizing: border-box;
-	margin-bottom: $small-spacing;
-	padding: $base-spacing / 3;
-	transition: border-color $base-duration $base-timing;
-	width: 100%;
-
+	&:focus, 
+	&:active,
 	&:hover {
-		border-color: shade($base-border-color, 20%);
-	}
-
-	&:focus {
-		border-color: $action-color;
-		box-shadow: $form-box-shadow-focus;
-		outline: none;
-	}
-
-	&:disabled {
-		background-color: shade($base-background-color, 5%);
-		cursor: not-allowed;
-
-		&:hover {
-			border: $base-border;
-		}
-	}
-
-	&::placeholder {
-		color: tint($base-font-color, 40%);
+		transition: all 0.3s ease-out;
+		border-color: palette(green, base);
 	}
 }
 
 textarea {
 	resize: vertical;
+	height: 70px;
 }
 
-[type="checkbox"],
-[type="radio"] {
-	display: inline;
-	margin-right: $small-spacing / 2;
-}
-
-[type="file"] {
-	margin-bottom: $small-spacing;
+.contact-form-wrap {
 	width: 100%;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
 }
 
-select {
-	margin-bottom: $small-spacing;
-	width: 100%;
+/* Form 7 style */
+form.wpcf7-form {
+	position: relative;
+	max-width: 300px;
+	float: right;
+
+	span[role=alert],
+	.wpcf7-validation-errors, 
+	.wpcf7-acceptance-missing,
+	.wpcf7-form-control-wrap.accept-this + i {
+		border-width: 0 0 0 2px;
+		font-size: 11px;
+		color: palette(green, base);
+	}
+
+	.wpcf7-submit {
+		text-transform: uppercase;
+		text-align: center;
+		position: relative;
+		float: right;
+		font-weight: $regular;
+		color: palette(white, base);
+		width: fit-content;
+		max-width: 220px;
+		display: block;
+		padding: 3px 20px;
+		margin: 0;
+		border: palette(green, base) solid 2px;
+		border-radius: 8px;
+		background-color: palette(blue, base);
+		transition: all 0.3s ease-out;
+		cursor: pointer;
+
+		&:hover {
+			background-color: palette(green, base);
+			color: palette(blue, base);
+		}
+	}
 }

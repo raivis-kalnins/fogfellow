@@ -29,8 +29,9 @@ function initialise() {
 		var scrolled = (winScroll / height) * 100;
 		document.getElementById("prline").style.width = scrolled + "%";
 	}
-	window.onscroll = function() { progressLine() };
-	// End Progress line
+	window.onscroll = function() { 
+		progressLine() 
+	};
 	
 	function mob_menu() {
         var win = $(window);

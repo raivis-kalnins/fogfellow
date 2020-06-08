@@ -528,6 +528,17 @@ body.home {
 			.card {
 				border-radius: 8px;
 				overflow: hidden;
+				transition: all 0.2s ease-out;
+
+				&:hover {
+					//transform: scale(1.01);
+					box-shadow: palette(grey, base) 0 0 5px 2px;
+
+					.thumbnail {
+						filter: grayscale(100%);
+						filter: gray;
+					}
+				}
 
 				.thumbnail {
 					position: relative;

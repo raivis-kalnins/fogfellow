@@ -1016,6 +1016,7 @@ input:focus {
 	padding-top: 6px;
 	text-transform: uppercase;
 	opacity: 0.4;
+	z-index: 9;
 
 	&:hover {
 		opacity: 0.95;

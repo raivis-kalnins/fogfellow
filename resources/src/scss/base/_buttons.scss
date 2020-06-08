@@ -57,13 +57,13 @@
 	position: absolute;
 	bottom: 10vh;
 	width: 34px;
-	margin-left: -17px;
+	margin-left: -18px;
 	height: 55px;
 	z-index: 3;
 
 	.mousey {
 		width: 3px;
-		padding: 10px 15px;
+		padding: 10px 13px;
 		height: 35px;
 		border: 2px solid $action-color;
 		border-radius: 25px;
@@ -253,7 +253,7 @@ a.post-edit-link {
     width: 32px;
     margin-left: -16px;
     bottom: 2px;
-	z-index: 99998;
+	z-index: 9;
 
 	.plus {
 		z-index: 1;
