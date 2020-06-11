@@ -172,7 +172,7 @@
 				</div>
 				<div class="modal-body">
 					<table class="show-cart table"></table>
-					<div><b>Total price:</b> £ <span class="total-cart"></span></div>
+					<div><b>Total price:</b>  € <span class="total-cart"></span></div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="modal-order button--green btn-more">Order now</button>

@@ -29,7 +29,6 @@ textarea {
 	&:focus, 
 	&:active,
 	&:hover {
-		transition: all 0.3s ease-out;
 		border-color: palette(green, base);
 	}
 }
@@ -59,6 +58,73 @@ form.wpcf7-form {
 		border-width: 0 0 0 2px;
 		font-size: 11px;
 		color: palette(green, base);
+	}
+
+	.wpcf7-acceptance {
+
+		span {
+			margin-left: 0;
+		}
+	}
+
+	span {
+
+		&.your-name,
+		&.your-email,
+		&.your-tel,
+		&.your-message {
+
+			&::before {
+				content: "";
+				left: 0;
+				position: absolute;
+				mask-position: center;
+				mask-repeat: no-repeat;
+				background-color: palette(white, base);
+				mask-size: 100%;
+				width: 18px;
+				height: 20px;
+				display: block;
+			}
+
+			&:hover::before {
+				background-color: palette(green, base);
+			}
+
+			&.your-name::before {
+				mask-image: url(../../dist/img/i/user-solid.svg);
+			}
+
+			&.your-email::before {
+				mask-image: url(../../dist/img/i/envelope-solid.svg);
+			}
+
+			&.your-tel::before {
+				mask-image: url(../../dist/img/i/phone-solid.svg);
+			}
+
+			&.your-message::before {
+				mask-image: url(../../dist/img/i/edit-solid.svg);
+			}
+		}
+	}
+
+	input {
+		
+		&[name="your-name"],
+		&[name="your-email"],
+		&[name="your-tel"] {
+			position: relative;
+			padding-left: 35px;
+		}
+	}
+
+	textarea {
+
+		&[name="your-message"] {
+			position: relative;
+			padding-left: 35px;
+		}
 	}
 
 	.wpcf7-submit {
