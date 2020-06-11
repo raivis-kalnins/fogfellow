@@ -117,6 +117,9 @@ function initialise() {
 		$(".menu-plus").toggleClass("menu__open");
 	});
 
+	// Add tags Contact Form
+	$("span.your-name, span.your-email, span.your-tel, span.your-message").append("<i />");
+
 	// End Initialise
 };
 $(document).ready(function () {
@@ -235,15 +238,16 @@ var shoppingCart = (function() {
 	
 	// Save cart
 	function saveCart() {
-	sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+		sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
 	}
 	
 	// Load cart
 	function loadCart() {
-	cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+		cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
 	}
+
 	if (sessionStorage.getItem("shoppingCart") != null) {
-	loadCart();
+		loadCart();
 	}
 	
 
@@ -420,11 +424,3 @@ $('.show-cart').on("change", ".item-count", function(event) {
 });
 
 displayCart();
-
-// Minimal Forms Javascript (for Edge, IE and select box)
-document.addEventListener("change", function(event) {
-	let element = event.target;
-	if (element && element.matches(".form-element-field")) {
-	element.classList[element.value ? "add" : "remove"]("-hasvalue");
-	}
-});

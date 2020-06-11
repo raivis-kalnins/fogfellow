@@ -539,16 +539,19 @@ input:focus {
 
 						&.delete-item {
 							position: relative;
+							width: 20px;
+							height: 20px;
 							background-color: transparent;
 							text-transform: uppercase;
 							font-weight: $regular;
 							border: 0;
 							color: palette(green, base);
+							overflow: hidden;
 
 							&::after {
 								content: "";
 								position: absolute;
-								top: -14px;
+								top: 0;
 								left: 0;
 								width: 20px;
 								height: 20px;

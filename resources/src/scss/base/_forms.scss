@@ -48,7 +48,9 @@ textarea {
 /* Form 7 style */
 form.wpcf7-form {
 	position: relative;
+	width: 100%;
 	max-width: 300px;
+	padding-top: 10px;
 	float: right;
 
 	span[role=alert],
@@ -84,27 +86,68 @@ form.wpcf7-form {
 				mask-size: 100%;
 				width: 18px;
 				height: 20px;
-				display: block;
 			}
 
 			&:hover::before {
 				background-color: palette(green, base);
 			}
 
-			&.your-name::before {
-				mask-image: url(../../dist/img/i/user-solid.svg);
+			&.your-name {
+				
+				&::before {
+					mask-image: url(../../dist/img/i/user-solid.svg);
+				}
+
+				i::after {
+					content: "Name";
+				}
 			}
 
-			&.your-email::before {
-				mask-image: url(../../dist/img/i/envelope-solid.svg);
+			&.your-email {
+
+				&::before {
+					mask-image: url(../../dist/img/i/envelope-solid.svg);
+				}
+
+				i::after {
+					content: "Email";
+				}
 			}
 
-			&.your-tel::before {
-				mask-image: url(../../dist/img/i/phone-solid.svg);
+			&.your-tel {
+
+				&::before {
+					mask-image: url(../../dist/img/i/phone-solid.svg);
+				}
+
+				i::after {
+					content: "Phone";
+				}
 			}
 
-			&.your-message::before {
-				mask-image: url(../../dist/img/i/edit-solid.svg);
+			&.your-message {
+
+				&::before {
+					mask-image: url(../../dist/img/i/edit-solid.svg);
+				}
+
+				i::after {
+					content: "Message";
+				}
+			}
+		}
+
+		i {
+			position: absolute;
+			left: 36px;
+			top: -14px;
+
+			&::after {
+				content: "";
+				font-style: normal;
+				font-size: 10px;
+				color: rgba(palette(white, base), 0.4);
+				opacity: 0;
 			}
 		}
 	}
@@ -116,6 +159,16 @@ form.wpcf7-form {
 		&[name="your-tel"] {
 			position: relative;
 			padding-left: 35px;
+		}
+
+		&:focus ~ i::after, 
+		&:active ~ i::after,
+		&:hover ~ i::after {
+			opacity: 1;
+		}
+
+		&::placeholder {
+			font-size: 11px;
 		}
 	}
 
