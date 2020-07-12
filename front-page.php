@@ -6,6 +6,11 @@
 ?>
 <section class="section full" id="home-slider">
 	<div class="full rellax bg-home" <?php if ( has_header_image() ) { ?> class="custom-background section" data-rellax-speed="5" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
+		<div class="wrap-video">
+			<?php if ( ! empty( get_option( 'video1' ) ) ) : ?>
+				<video class="homepage-video" id="myVideo" webkit-playsinline="true" playsinline="true" autoplay="true" muted="" loop="true" preload="auto" src="<?php echo wp_get_attachment_url( get_option( 'video1' ) ); ?>" poster="<?php echo wp_get_attachment_url( get_option( 'poster1' ) ); ?>"></video>
+			<?php endif; ?>
+		</div>
 		<?php if( ! empty( $logo ) ) : ?>
 			<img src="<?php echo $logo; ?>" alt="Logo - <?php echo $logo_alt; ?>" class="logo-c lazyload fadeIn delay-025 rellax" data-rellax-speed="2" data-rellax-xs-speed="1" />
 		<?php endif; ?>

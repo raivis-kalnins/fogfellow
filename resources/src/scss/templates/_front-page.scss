@@ -57,6 +57,11 @@ body.home {
 			@include bg-h-to-top($startColor: palette(blue, base), $endColor: transparent);
 		}
 
+		.wrap-video {
+			position: absolute;
+			z-index: 1;
+		}
+
 		h1,
 		.logo-c {
 			position: relative;

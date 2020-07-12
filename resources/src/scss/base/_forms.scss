@@ -178,6 +178,10 @@ form.wpcf7-form {
 			position: relative;
 			padding-left: 35px;
 		}
+
+		&::placeholder {
+			font-size: 11px;
+		}
 	}
 
 	.wpcf7-submit {
