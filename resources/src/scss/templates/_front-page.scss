@@ -60,6 +60,14 @@ body.home {
 		.wrap-video {
 			position: absolute;
 			z-index: 1;
+
+			@media (max-width: $tablet) {
+
+				video {
+					max-width: none;
+					height: 100vh;
+				}
+			}
 		}
 
 		h1,
