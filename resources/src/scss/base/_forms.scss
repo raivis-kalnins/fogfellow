@@ -84,7 +84,7 @@ form.wpcf7-form {
 				mask-repeat: no-repeat;
 				background-color: palette(white, base);
 				mask-size: 100%;
-				width: 18px;
+				width: 14px;
 				height: 20px;
 			}
 
@@ -129,6 +129,7 @@ form.wpcf7-form {
 
 				&::before {
 					mask-image: url(../../dist/img/i/edit-solid.svg);
+					width: 18px;
 				}
 
 				i::after {
@@ -140,7 +141,7 @@ form.wpcf7-form {
 		i {
 			position: absolute;
 			left: 36px;
-			top: -14px;
+			top: -16px;
 
 			&::after {
 				content: "";
@@ -161,14 +162,12 @@ form.wpcf7-form {
 			padding-left: 35px;
 		}
 
-		&:focus ~ i::after, 
-		&:active ~ i::after,
-		&:hover ~ i::after {
+		&:focus ~ i::after {
 			opacity: 1;
 		}
 
 		&::placeholder {
-			font-size: 11px;
+			font-size: 14px;
 		}
 	}
 
@@ -180,7 +179,11 @@ form.wpcf7-form {
 		}
 
 		&::placeholder {
-			font-size: 11px;
+			font-size: 14px;
+		}
+
+		&:focus ~ i::after {
+			opacity: 1;
 		}
 	}
 

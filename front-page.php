@@ -3,6 +3,7 @@
 	$custom_logo_id = get_theme_mod('custom_logo'); 
 	$logo = wp_get_attachment_image_url($custom_logo_id,'full');
 	$home_zig_images = get_field( 'zig_zag_img' ) ? get_field( 'zig_zag_img' ) : get_field( 'zig_zag_img', $home_id );
+	$home_diff = get_field( 'diff' ) ? get_field( 'diff' ) : get_field( 'diff', $home_id );
 ?>
 <section class="section full" id="home-slider">
 	<div class="full rellax bg-home" <?php if ( has_header_image() ) { ?> class="custom-background section" data-rellax-speed="5" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
@@ -44,6 +45,7 @@
 			<?php else: ?>
 				<h1><?php _e( 'Sorry, nothing to display.', 'dp' ); ?></h1>
 			<?php endif; ?>
+			<div id="diff" style="display:none" class="animated-modal"><?php echo $home_diff; /* Popup content */ ?></div>
 		</div>
 		<div class="column is-8 rellax home-img" data-rellax-speed="7" data-rellax-xs-speed="5">
 			<?php if ( has_post_thumbnail( $_post->ID ) ) : ?>
@@ -107,7 +109,7 @@
 										</div>
 										<div class="column is-full-tablet is-8">
 											<h3><?php echo $title; ?></h3>
-											<?php _e( sb_truncate( $content, 1740 ) ); ?>
+											<?php _e( sb_truncate( $content, 740 ) ); ?>
 											<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" class="button--green btn-desc-<?php echo $n; ?>" data-animation-duration="700">Read more</a>
 											<div class="arrows">
 												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
