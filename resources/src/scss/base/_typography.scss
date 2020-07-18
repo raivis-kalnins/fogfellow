@@ -180,6 +180,15 @@ p {
 	letter-spacing: 0;
 	line-height: 24px;
 	font-family: $base-font-family;
+
+	&.has-drop-cap::first-letter {
+		float: left;
+		font-size: 75px;
+		line-height: 60px;
+		padding-top: 4px;
+		padding-right: 8px;
+		padding-left: 3px;
+	  }
 }
 
 p,

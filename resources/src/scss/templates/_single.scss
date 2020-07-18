@@ -24,6 +24,10 @@ body.single {
 		p {
 			width: 100%;
 			display: inline-block;
+
+			a {
+				color: palette(green,base);
+			}
 		}
 
 		.card-price,

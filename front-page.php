@@ -107,7 +107,7 @@
 										</div>
 										<div class="column is-full-tablet is-8">
 											<h3><?php echo $title; ?></h3>
-											<?php _e( sb_truncate( $content, 180 ) ); ?>
+											<?php _e( sb_truncate( $content, 1740 ) ); ?>
 											<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" class="button--green btn-desc-<?php echo $n; ?>" data-animation-duration="700">Read more</a>
 											<div class="arrows">
 												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
@@ -189,7 +189,7 @@
 					$args = array(
 						'post_type'      => 'post',
 						'cat'            => 'news',
-						'posts_per_page' => 4,
+						'posts_per_page' => 2,
 					);
 					$loop = new WP_Query( $args );
 					if ( have_posts() ) :

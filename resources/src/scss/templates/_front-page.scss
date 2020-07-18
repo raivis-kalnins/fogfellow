@@ -123,6 +123,10 @@ body.home {
 				}
 			}
 
+			li {
+				color: palette(white,base);
+			}
+
 			&::before {
 				content: "";
 				mask-image: url(../../dist/img/i/question-solid.svg);
@@ -226,7 +230,7 @@ body.home {
 					transition: all 0.5s ease-out;
 					border-radius: 8px;
 					position: relative;
-					max-width: 570px;
+					//max-width: 570px;
 					float: right;
 
 					@media (max-width: $tablet) {
