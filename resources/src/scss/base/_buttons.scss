@@ -296,13 +296,13 @@ a.post-edit-link {
 		transition: all 0.1s ease-out;
 
 		&.left-menu {
-			left: -160px;
+			left: -102px;
 			border-radius: 32px 0 0 32px;
 		}
 
 		&.right-menu {
 			border-radius: 0 32px 32px 0;
-			right: -160px;
+			right: -102px;
 
 			border-radius: 0 32px 32px 0;
 
@@ -323,18 +323,63 @@ a.post-edit-link {
 			padding: 0;
 
 			li {
-				margin: 0 15px;
+				margin: 0 12px;
 				opacity: 0;
 				transition: all 0.3s ease;
-				transform: translate(15px, 0);
+				transform: translate(12px, 0);
 
 				a {
 					display: block;
+					transition: all 0.3s ease;
 
-					svg {
-						width: 30px;
-						color: #222;
-						transition: all 0.3s ease;
+					&.pop-phone,
+					&.pop-email, 
+					&.pop-home,
+					&.pop-reload {
+						position: relative;
+
+						&::before {
+							content:"";
+							position: absolute;
+							left: 12px;
+							top: -2px;
+							mask-position: center;
+							mask-repeat: no-repeat;
+							background-color: palette(green, base);
+							mask-size: 100% 100%;
+							width: 20px;
+							height: 20px;
+							display: block;
+						}
+
+						i {
+							font-style: normal;
+						}
+					}
+
+					&.pop-phone::before {
+						mask-image: url(../../dist/img/i/phone-solid.svg);
+					}
+
+					&.pop-email {
+
+						&::before {
+							mask-image: url(../../dist/img/i/envelope-solid.svg);
+						}
+
+						i {
+							margin-left: 12px;
+						}
+					}
+
+					&.pop-home::before {
+						mask-image: url(../../dist/img/i/home-solid.svg);
+						left: 0;
+					}
+
+					&.pop-reload::before {
+						mask-image: url(../../dist/img/i/shopping-cart-solid.svg);
+						left: 0;
 					}
 
 					&:hover {
@@ -368,7 +413,7 @@ a.post-edit-link {
 
 		.menu-list{
 			opacity: 1;
-			width: 200px;
+			width: 120px;
 			visibility: visible;
 
 			ul {

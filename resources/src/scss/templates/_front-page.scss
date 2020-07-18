@@ -6,8 +6,11 @@ body.home {
 		background-color: palette(blue, base);
 	}
 
-	img.fancybox-image {
-		background: palette(white, base);
+	img {
+	
+		&.fancybox-image {
+			background: palette(white, base);
+		}
 	}
 
 	.navbar {
@@ -133,6 +136,16 @@ body.home {
 				max-width: none;
 				margin-left: 0;
 				width: 100%;
+				margin: 20px auto;
+			}
+
+			p {
+				position: relative;
+
+				strong {
+					position: relative;
+					z-index: 999;
+				}
 			}
 
 			&::before {
