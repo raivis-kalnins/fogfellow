@@ -11,6 +11,7 @@
 		background-color: palette(white, base);
 		border-radius: 8px;
 		width: 100%;
+		min-height: 92%;
 		margin: 16px 0;
 		padding: 0;
 		transition: 0.2s ease-in-out box-shadow, 0.2s ease-in-out transform;
@@ -53,7 +54,7 @@
 				font-size: 18px;
 				line-height: 24px;
 				font-weight: $black;
-				min-height: 48px;
+				//min-height: 48px;
 				margin-top: 10px;
 			}
 

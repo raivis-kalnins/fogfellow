@@ -45,6 +45,49 @@ textarea {
 	overflow: hidden;
 }
 
+
+input#callbacktime {
+	height: 48px;
+	border-radius: 3px;
+	background-color: transparent;
+	border: 0;
+	text-align: center;
+	position: absolute;
+	right: 30px;
+	top: 70px;
+}
+
+#time-3,
+#time-3 {
+	margin-top: -20px;
+	display: inline-block;
+	width: 100%;
+
+	input {
+		min-width: 260px;
+		max-width: 260px;
+		height: 50px;
+		margin-bottom: 10px;
+		border-radius: 3px;
+		background-color: palette(white, base);
+		border: solid 1px palette(white, base);
+		padding-left: 10px;
+		font-size: 25px;
+		color: #333;
+	}
+
+	span:first-child {
+		font-size: 14px;
+		letter-spacing: -0.01em;
+		color: rgba(palette(white, base), 0.8);
+		display: block;
+		margin-top: -5px;
+		margin-right: 5px;
+		position: relative;
+		text-align: left;
+	}
+}
+
 /* Form 7 style */
 form.wpcf7-form {
 	position: relative;
@@ -52,6 +95,8 @@ form.wpcf7-form {
 	max-width: 300px;
 	padding-top: 10px;
 	float: right;
+	color: palette(white, base);
+	font-size: 12px;
 
 	span[role=alert],
 	.wpcf7-validation-errors, 
@@ -66,7 +111,12 @@ form.wpcf7-form {
 
 		span {
 			margin-left: 0;
+			line-height: 12px;
 		}
+	}
+
+	p {
+		line-height: 12px;
 	}
 
 	span {
@@ -142,6 +192,7 @@ form.wpcf7-form {
 			position: absolute;
 			left: 36px;
 			top: -16px;
+			line-height: 12px;
 
 			&::after {
 				content: "";

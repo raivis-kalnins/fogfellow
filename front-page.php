@@ -94,6 +94,7 @@
 							$title = get_sub_field('title');
 							$content = get_sub_field('description');
 							$drawing = get_sub_field('drawing');
+							$maint = get_sub_field('maint');
 							$n = $i++;
 							?>
 							<li>
@@ -111,6 +112,7 @@
 											<h3><?php echo $title; ?></h3>
 											<?php _e( sb_truncate( $content, 740 ) ); ?>
 											<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" class="button--green btn-desc-<?php echo $n; ?>" data-animation-duration="700">Read more</a>
+											<a href="javascript:;" data-fancybox data-src="#id-maint" class="button--green btn-desc-maint" data-animation-duration="700">Daily Maintenance</a>
 											<div class="arrows">
 												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
 												<label class="next tab-<?php echo $n + 1; if( $n == $rowCount) { echo ' last'; } ?>" for="tab-<?php echo $n + 1; ?>">&#8250;</label>   
@@ -124,6 +126,12 @@
 											<a href="<?php echo $pop_image['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $pop_image['url']; ?>" alt="<?php echo $pop_image['alt'] ?>" /></a>
 											<hr />
 											<a href="<?php echo $drawing['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt'] ?>" /></a>
+											<a href="<?php echo $maint['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $maint['url']; ?>" alt="<?php echo $maint['alt'] ?>" /></a>
+										</div>
+										<div id="id-maint" style="display:none" class="animated-modal">
+											<?php if ( ! empty( get_option( 'slide1' ) ) ) : ?>
+												<img src="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" alt="" />
+											<?php endif; ?>
 										</div>
 									</li>
 								</ul>
@@ -191,7 +199,7 @@
 					$args = array(
 						'post_type'      => 'post',
 						'cat'            => 'news',
-						'posts_per_page' => 2,
+						'posts_per_page' => 4,
 					);
 					$loop = new WP_Query( $args );
 					if ( have_posts() ) :

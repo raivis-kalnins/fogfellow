@@ -92,8 +92,8 @@
 	<div class="menu-plus">
 		<div class="left-menu menu-list">
 			<ul>
-				<li><a href="#" class="pop-email"></a></li>
-				<li><a href="#" class="pop-phone"></a></li>
+				<li><a href="javascript:;" data-fancybox="" data-src="#contact-form-pop" class="pop-email"></a></li>
+				<li><a href="javascript:;" data-fancybox="" data-src="#callback-form-pop" class="pop-phone"></a></li>
 			</ul>
 		</div>
 		<div class="plus">
@@ -101,10 +101,19 @@
 		</div>
 		<div class="right-menu menu-list">
 			<ul>
-				<li><a href="#" class="pop-home"></a></li>
-				<li><a href="#" class="pop-reload"></a></li>							
+				<li><a href="<?php echo home_url(); ?>" class="pop-home"></a></li>
+				<li><a href="<?php echo home_url(); ?>/shop" class="pop-reload"></a></li>							
 			</ul>
 		</div>
+	</div>
+
+	<div id="contact-form-pop" style="display:none" class="animated-modal">
+		<?php echo do_shortcode('[contact-form-7 id="294" title="Contact form EN"]'); /* Popup content */ ?>
+	</div>
+
+	<div id="callback-form-pop" style="display:none" class="animated-modal">
+		<?php echo do_shortcode('[contact-form-7 id="698" title="Callback EN"]'); /* Popup content */ ?>
+		<input type="time" name="time" value="" id="callbacktime" class="form-control" placeholder="--:--" maxlength="5" onKeyPress="formatTime(this)" />
 	</div>
 
 	<div class="scroll-up"></div>
@@ -119,10 +128,13 @@
 				</div>
 				<div class="modal-body">
 					<table class="show-cart table"></table>
-					<div><b>Total price:</b>  € <span class="total-cart"></span></div>
+					<div class="total-price"><b>Total price:</b>  € <span class="total-cart"></span></div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="modal-order button--green btn-more">Order now</button>
+				</div>
+				<div id="shop-form-pop" style="display:none">
+					<?php echo do_shortcode('[contact-form-7 id="699" title="Contact form - Shop EN"]'); /* Popup content */ ?>
 				</div>
 			</div>
 		</div>
@@ -130,6 +142,13 @@
 	<?php
 		$template_file = get_post_meta( get_the_ID(), '_wp_page_template', true );
 	?>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdeOrMZAAAAAMHFsnRS1vrZfnJEW4bpaEugYXl8"></script>
+	<script>
+		// Recapcha
+		grecaptcha.ready(function() {
+			grecaptcha.execute('6LdeOrMZAAAAAMHFsnRS1vrZfnJEW4bpaEugYXl8', {action: 'fogfellow'});
+		});
+	</script>
 	<?php
 		get_template_part( 'resources/partials/fonts' );
 		wp_footer();

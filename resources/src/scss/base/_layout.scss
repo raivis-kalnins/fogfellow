@@ -57,7 +57,7 @@ select:hover,
 textarea:focus,
 button:focus,
 * {
-    margin: 0;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
@@ -77,6 +77,39 @@ input:focus {
 	display: none !important;
 }
 
+.fancybox-content {
+
+	ul {
+		padding-left: 18px;
+		list-style: disc;
+		text-align: left;
+	}
+
+	&#contact-form-pop,
+	&#callback-form-pop {
+		background: transparent;
+		overflow-x: hidden;
+		position: relative;
+
+		.fancybox-button {
+			background: transparent;
+			padding: 1px;
+
+			svg {
+				color: palette(white,base);
+			}
+		}
+	}
+}
+
+#shop-form-pop {
+	width: fit-content;
+	text-align: left;
+	margin: 0 auto;
+	position: relative;
+	display: block;
+}
+
 .fancybox-thumbs__list a:before {
 	border-color: palette(green, base);
 }
@@ -87,6 +120,11 @@ input:focus {
 
 .fancybox-slide--html img {
 	width: 100%;
+}
+
+.grecaptcha-badge {
+    bottom: 48px !important;
+    z-index: 999;
 }
 
 #prline {
@@ -1086,7 +1124,7 @@ input:focus {
 	padding-top: 6px;
 	text-transform: uppercase;
 	opacity: 0.4;
-	z-index: 9;
+	z-index: 8;
 
 	&:hover {
 		opacity: 0.95;

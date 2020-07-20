@@ -109,6 +109,18 @@ function initialise() {
 		$("html").removeClass("modal-win");
 	});
 
+	$(".modal-order").click(function() {
+		var products = $(".table.show-cart").find('tr').each(function () {
+			//var tds = $(this).find('td'), product = tds.eq(0).text(), Quantity = tds.find('.item-count').val(), Price = tds.eq(4).text();
+			//product + ' Q: ' + Quantity+ ' P: ' + Price + ') & ';
+			//console.log(prod);
+		}).text();
+		var total_price = $(".total-price").text();
+		$('.text-products input').val("My basket: " + products + " || " + total_price);
+		$(".show-cart.table, .total-price, .modal-order").hide();
+		$("#shop-form-pop").show();
+	});
+
 	// Add Fancybox for img
 	$(".single-content img").parent("a").attr("data-fancybox","gallery").addClass("content-img");
 
@@ -119,6 +131,26 @@ function initialise() {
 
 	// Add tags Contact Form
 	$("span.your-name, span.your-email, span.your-tel, span.your-message").append("<i />");
+
+	// Change time input 
+	$("input#callbacktime").change(function() {
+		var val = $(this).val();
+		$('input#time03').val(val);
+	});
+	
+	// Only numbers
+	function validateNumber(event) {
+		var key = window.event ? event.keyCode : event.which;
+		if (event.keyCode === 8 || event.keyCode === 46) {
+				return true;
+		} else if ( key < 48 || key > 57 ) {
+				return false;
+		} else {
+				return true;
+		}
+	}
+
+	$('#callbacktime, #tel3').keypress(validateNumber);
 
 	// End Initialise
 };
@@ -360,7 +392,7 @@ $('.add-to-cart').click(function(event) {
 });
 
 // Clear items
-$('.clear-cart').click(function() {
+$('.clear-cart, #shop-form-pop .wpcf7-submit').click(function() {
 	shoppingCart.clearCart();
 	displayCart();
 	console.log('clicked');
