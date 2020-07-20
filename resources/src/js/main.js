@@ -152,6 +152,10 @@ function initialise() {
 
 	$('#callbacktime, #tel3').keypress(validateNumber);
 
+	$('body').on('click','div.wpcf7-mail-sent-ok', function() {
+		location.reload();
+	});
+
 	// End Initialise
 };
 $(document).ready(function () {
