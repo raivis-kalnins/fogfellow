@@ -245,6 +245,7 @@ input:focus {
 				border-radius: 3px;
 				transition: transform 0.4s cubic-bezier(0.54, -0.86, 0.57, 0.57);
 				position: relative;
+				margin-left: 0;
 				
 				&.first,
 				&.third {
@@ -260,7 +261,7 @@ input:focus {
 			@media (max-width: $tablet) {
 				position: relative;
 				width: 32px;
-				height: 32px;
+				height: 32.5px;
 				display: inline-flex;
 				flex-direction: column;
 				justify-content: space-between;
@@ -294,7 +295,7 @@ input:focus {
 					}
 
 					&.first {
-						transform: translate(2px, 6px) rotate(-135deg);
+						transform: translate(1.5px, 6px) rotate(-135deg);
 					}
 
 					&.third {
