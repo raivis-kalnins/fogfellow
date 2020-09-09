@@ -138,7 +138,7 @@
 				</div>
 			</div>
 		</div>
-	</div> 
+	</div>
 	<?php
 		$template_file = get_post_meta( get_the_ID(), '_wp_page_template', true );
 	?>
