@@ -103,7 +103,5 @@ add_filter( 'allowed_block_types', 'restrict_blocks', 10, 2 );
  * Require the custom Gutenberg Blocks.
  */
 if ( ! is_admin() ) {
-
-	require_once dirname( __FILE__ ) . '/blocks/core-gallery.php';
 	require_once dirname( __FILE__ ) . '/blocks/core-file.php';
 }
