@@ -378,6 +378,7 @@ input:focus {
 		right: 40px;
 		top: 5px;
 		z-index: 3;
+		display: none !important;
 
 		@media (max-width: $tablet) {
 			right: 30px;

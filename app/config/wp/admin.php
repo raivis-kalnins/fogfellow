@@ -88,12 +88,12 @@ add_theme_support( 'custom-logo', array(
  * Post type Shop
  */
 function create_post_type_shop() {
-    register_taxonomy_for_object_type('category', 'shop'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'shop');
+    register_taxonomy_for_object_type('category', 'store'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'store');
     register_post_type('shop', // Register Custom Post Type
         array(
             'labels' => array(
-            'name' => __('Shop', 'dp'), // Rename these to suit
+            'name' => __('Store', 'dp'), // Rename these to suit
             'singular_name' => __('Product', 'dp'),
             'add_new' => __('Add New product', 'dp'),
             'add_new_item' => __('Add New shop Product', 'dp'),

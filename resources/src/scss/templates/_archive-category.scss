@@ -69,6 +69,7 @@ body.archive {
 				background: rgba(palette(green, base), 0.8);
 				color: palette(blue, base);
 				border-radius: 0 4px 4px 0;
+				display: none !important;
 			}
 
 			.content {
@@ -78,6 +79,10 @@ body.archive {
 					position: absolute;
 					bottom: 16px;
 					z-index: 3;
+
+					.add-to-cart {
+						display: none !important;
+					}
 
 					.read-more-shop {
 						float: right;

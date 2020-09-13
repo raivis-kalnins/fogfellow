@@ -18,7 +18,7 @@ get_template_part( '/resources/partials/hero' );
 					<div class="column">
 						<h1 class="is-1"><?php echo substr(get_the_archive_title(), strpos(get_the_archive_title(), ': ') + 2); ?></h1>
 						<?php 
-							if ( get_post_type( $post_id ) === 'shop' ) :
+							if ( get_post_type( $post_id ) === 'store' ) :
 								if ( ! empty( get_option( 'shop-desc' ) ) ) : 
 						?>
 						<p class="shop-desc"><?php echo get_option( 'shop-desc' ); ?></p>
@@ -45,7 +45,7 @@ get_template_part( '/resources/partials/hero' );
 							<!-- article -->
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'card card--archive faux-link__element' ); ?>>
 								<div class="post-img"></div>
-								<?php if ( get_post_type( $post_id ) === 'shop' ) : ?>
+								<?php if ( get_post_type( $post_id ) === 'store' ) : ?>
 									<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
 								<?php endif; ?>
 								<div class="post-details">
@@ -57,7 +57,7 @@ get_template_part( '/resources/partials/hero' );
 								} else {
 								the_content();
 								}
-							if ( get_post_type( $post_id ) === 'shop' ) :
+							if ( get_post_type( $post_id ) === 'store' ) :
 							?>
 							<div class="shop-btn">
 								<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>

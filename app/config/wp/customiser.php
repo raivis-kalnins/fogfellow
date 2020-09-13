@@ -99,7 +99,7 @@ function register_additional_customizer_settings( $wp_customize ) {
 			$wp_customize,
 			'shop-desc',
 			array(
-				'label'       => __( 'Shop', 'textdomain' ),
+				'label'       => __( 'Store', 'textdomain' ),
 				'description' => __( 'Shop description', 'textdomain' ),
 				'priority'    => 10,
 				'section'     => 'title_tagline',

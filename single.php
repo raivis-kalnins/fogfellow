@@ -37,13 +37,13 @@ dp_get_template_part(
 				<article class="head columns is-marginless">
 					<div class="single-content is-paddingless column is-full">
 						<?php the_content(); ?>
-						<?php if ( get_post_type( $post_id ) === 'shop' ) : ?>
+						<?php if ( get_post_type( $post_id ) === 'store' ) : ?>
 							<hr />
 							<div class="card-price">Price: <b>€ <?php echo $price; ?></b></div>
 							<a href="#" data-name="<?php echo $slug; ?>" data-price="<?php echo $price; ?>" class="add-to-cart button--fullgreen button">Add to cart</a>
 						<?php endif; ?>
 						<?php 
-							if ( get_post_type( $post_id ) === 'shop' ) :
+							if ( get_post_type( $post_id ) === 'store' ) :
 								if ( ! empty( get_option( 'shop-desc-star' ) ) ) : 
 						?>
 						<br /><br /><p class="shop-desc-star"><?php echo get_option( 'shop-desc-star' ); ?></p>

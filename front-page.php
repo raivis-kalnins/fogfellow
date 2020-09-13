@@ -145,7 +145,7 @@
 </section>
 <section class="section sc-shop sc3" id="shop">
 	<div class="container">
-		<h2>Shop</h2>
+		<h2>Store</h2>
 		<div class="bl-content columns swiper-container">
 			<div class="swiper-wrapper">
 				<?php

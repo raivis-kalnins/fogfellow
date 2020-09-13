@@ -544,6 +544,7 @@ body.home {
 					position: relative;
 					bottom: 25px;
 					padding-top: 10px;
+					display: none !important;
 
 					b {
 						float: right;
@@ -556,6 +557,7 @@ body.home {
 
 					&.add-to-cart {
 						float: left;
+						display: none !important;
 					}
 
 					&.read-more-shop {
