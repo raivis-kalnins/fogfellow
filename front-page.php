@@ -4,6 +4,7 @@
 	$logo = wp_get_attachment_image_url($custom_logo_id,'full');
 	$home_zig_images = get_field( 'zig_zag_img' ) ? get_field( 'zig_zag_img' ) : get_field( 'zig_zag_img', $home_id );
 	$home_diff = get_field( 'diff' ) ? get_field( 'diff' ) : get_field( 'diff', $home_id );
+	$map_image = get_field( 'map_img' ) ? get_field( 'map_img' ) : get_field( 'map_img', $home_id );
 ?>
 <section class="section full" id="home-slider">
 	<div class="full rellax bg-home" <?php if ( has_header_image() ) { ?> class="custom-background section" data-rellax-speed="5" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
@@ -90,6 +91,7 @@
 						<?php while( have_rows('products') ): 
 							the_row();
 							$image = get_sub_field('image');
+							//var_dump($image);
 							$pop_image = get_sub_field('pop_image');
 							$title = get_sub_field('title');
 							$content = get_sub_field('description');
@@ -104,7 +106,7 @@
 									<li class="tab-content columns">
 										<div class="column is-full-tablet is-4">
 											<div class="image-box faux-link__element">
-												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+												<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 												<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" data-animation-duration="700" class="faux-link__overlay-link"></a>
 											</div>
 										</div>
@@ -123,15 +125,18 @@
 											<h2><?php echo $title; ?></h2>
 											<?php echo $content; ?>
 											<hr />
-											<a href="<?php echo $pop_image['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $pop_image['url']; ?>" alt="<?php echo $pop_image['alt'] ?>" /></a>
+											<a href="<?php echo $pop_image['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $pop_image['url']; ?>" alt="<?php echo $pop_image['alt']; ?>" /></a>
 											<hr />
-											<a href="<?php echo $drawing['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt'] ?>" /></a>
-											<a href="<?php echo $maint['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $maint['url']; ?>" alt="<?php echo $maint['alt'] ?>" /></a>
+											<a href="<?php echo $drawing['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $drawing['url']; ?>" alt="<?php echo $drawing['alt']; ?>" /></a>
+											<a href="<?php echo $maint['url']; ?>" data-fancybox="image-<?php echo $n; ?>"><img src="<?php echo $maint['url']; ?>" alt="<?php echo $maint['alt']; ?>" /></a>
 										</div>
 										<div id="id-maint" style="display:none" class="animated-modal">
 											<?php if ( ! empty( get_option( 'slide1' ) ) ) : ?>
-												<img src="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" alt="" />
+												<img src="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" alt="Daily Maintenance" />
 											<?php endif; ?>
+										</div>
+										<div id="map" style="display:none" class="animated-modal">
+											<a href="<?php echo $map_image['url']; ?>" data-fancybox="image-map"><img src="<?php echo $map_image['url']; ?>" alt="<?php echo $map_image['alt']; ?>" /></a>
 										</div>
 									</li>
 								</ul>

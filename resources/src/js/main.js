@@ -95,6 +95,8 @@ function initialise() {
 		}, 200);
 	});
 
+	$("a.navbar-item[title='international']").attr({"href":"javascript:;","data-fancybox":"","data-src":"#map"});
+
 	/* Modal */
 	$(".modal-button").click(function() {
 		$("#modal-cart").addClass("is-active");
