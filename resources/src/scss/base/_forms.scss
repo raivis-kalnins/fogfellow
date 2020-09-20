@@ -45,6 +45,11 @@ textarea {
 	overflow: hidden;
 }
 
+input[type=checkbox] {
+    vertical-align: baseline;
+    float: left;
+    margin-right: 5px !important;
+}
 
 input#callbacktime {
 	height: 48px;

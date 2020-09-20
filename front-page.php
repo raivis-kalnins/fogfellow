@@ -135,9 +135,20 @@
 												<img src="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" alt="Daily Maintenance" />
 											<?php endif; ?>
 										</div>
-										<div id="map" style="display:none" class="animated-modal">
-											<a href="https://fogfellowdesigns.com"  target="_blank"><img src="<?php echo $map_image['url']; ?>" alt="<?php echo $map_image['alt']; ?>" /></a>
+										<div id="map" style="display:none" class="animated-modal popup-map">
+											<a href="#"  id="fog-pop"><img src="<?php echo $map_image['url']; ?>" alt="<?php echo $map_image['alt']; ?>" /></a>
 											<a href="https://www.filta.co.uk" target="_blank"><div class="m-uk"></div></a>
+											<div class="tooltip">
+												<span class="tooltiptext">
+													<h2>Fog Fellow Designs LTD</h2>
+													<?php if ( ! empty( get_option( 'phone' ) ) ) : ?>
+														<p class="foo-phone"><?php echo get_option( 'phone' ); ?></p>
+													<?php endif; ?>
+													<?php if ( ! empty( get_option( 'email' ) ) ) : ?>
+														<p class="foo-email"><?php echo get_option( 'email' ); ?></p>
+													<?php endif; ?>
+												</span>
+											</div>
 										</div>
 									</li>
 								</ul>

@@ -157,17 +157,21 @@ input:focus {
 	}
 }
 
-.waveHorizontals{
+.waveHorizontals {
 	width: 100%;  
 	transform: rotate(180deg);
-	height:74px;
-    margin-top: 52px;
+	height: 74px;
+	margin-top: 64px;
 	position: absolute;
 	overflow: hidden;
 	z-index: 3;
+
+	@media (max-width: $desktop) {
+		margin-top: 52px;
+	}
 }
 
-.waveHorizontal{
+.waveHorizontal {
 	width: 200%;
 	height: 100%;
 	display: block;
@@ -233,7 +237,7 @@ input:focus {
 		#menu-hm {
 			display: none;
 			
-			@media (max-width: $tablet) {
+			@media (max-width: $desktop) {
 				display: block;
 			}
 			
@@ -258,7 +262,7 @@ input:focus {
 				}
 			}
 
-			@media (max-width: $tablet) {
+			@media (max-width: $desktop) {
 				position: relative;
 				width: 32px;
 				height: 32.5px;
@@ -309,7 +313,7 @@ input:focus {
 			position: relative;
 			z-index: 2;
 
-			@media (max-width: $tablet) {
+			@media (max-width: $desktop) {
 				background-color: rgba(palette(blue, base), 0.95);
 				height: 100vh;
 				padding-top: 40px;
@@ -327,12 +331,12 @@ input:focus {
 				.navbar-item {
 					text-transform: uppercase;
 					color: palette(white, base);
-					margin: 10px 0.5rem 0 0.5rem;
+					margin: 12px 0.5rem 12px 0.5rem;
 					font-weight: $regular;
 					letter-spacing: 0.1rem;
 					transition: all 0.3s ease-out;
 
-					@media (max-width: $tablet) {
+					@media (max-width: $desktop) {
 						width: fit-content;
 						text-align: center;
 						margin: 10px auto;

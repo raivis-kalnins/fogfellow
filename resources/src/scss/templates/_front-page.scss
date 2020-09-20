@@ -736,9 +736,9 @@ body.home {
 		width: 100%;
 		position: relative;
 
-		// a[data-fancybox="image-map"] {
-		// 	pointer-events: none;
-		// }
+		a[data-fancybox="image-map"] {
+			pointer-events: none;
+		}
 
 		.m-uk {
 			background: transparent url(../../dist/img/i/map-marker.png) no-repeat;
@@ -753,6 +753,78 @@ body.home {
 			&:hover {
 				transform: scale(1.1);
 			}
+		}
+
+		.tooltip {
+			left: 7vw;
+			bottom: 30vh;
+			position: absolute;
+
+			.tooltiptext {
+				width: 240px;
+				background-color: rgba(palette(white, base), 0.8);
+				color: palette(blue, base);
+				text-align: center;
+				padding: 5px 0;
+				border-radius: 6px;
+				position: absolute;
+				transition: all 0.4s linear;
+				display: none;
+
+				h2 {
+					font-size: 24px;
+					font-size: 1em;
+					margin-bottom: 0;
+				}
+
+				p {
+					font-size: 15px;
+					line-height: 18px;
+				}
+
+				.foo-phone,
+				.foo-email,
+				.foo-address {
+					padding-left: 30px;
+					position: relative;
+
+					&::before {
+						content:"";
+						position: absolute;
+						left: 40px;
+						mask-position: center;
+						mask-repeat: no-repeat;
+						background-color: palette(blue, base);
+						mask-size: 100% 100%;
+						width: 20px;
+						height: 20px;
+						display: block;
+					}
+
+					i {
+						font-style: normal;
+					}
+				}
+
+				.foo-phone::before {
+					mask-image: url(../../dist/img/i/phone-solid.svg);
+				}
+
+				.foo-email {
+
+					&::before {
+						mask-image: url(../../dist/img/i/envelope-solid.svg);
+					}
+
+					i {
+						margin-left: -5px;
+					}
+				}
+			}
+		}
+
+		&:hover .tooltip>.tooltiptext {
+			display: block;
 		}
 	}
 }
