@@ -41,9 +41,24 @@ section.downloads {
 	}
 }
 
-body.page.body-pink {
+body.page {
 
-	.wp-block-file a {
+	.wp-block-file a:first-child {
 		color: palette(black, base) !important;
+		padding-left: 30px;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			margin: -5px -30px;
+			width: 20px;
+			height: 30px;
+			mask-position: center;
+			mask-repeat: no-repeat;
+			background-color: #bfd730;
+			mask-image: url(../../dist/img/i/download.svg);
+			mask-size: 100% 100%;
+		}
 	}
 }

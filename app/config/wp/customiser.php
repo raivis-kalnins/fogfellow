@@ -756,6 +756,21 @@ function register_additional_customizer_settings( $wp_customize ) {
 }
 add_action( 'customize_register', 'register_additional_customizer_settings', 10 );
 
+// Remove WordPress default emoji scripts
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+// Form 7 default style & JS disabled
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
+
+// Remove WP Embed in WP 4.4+ (video embedding)
+add_action( 'wp_footer', function(){
+	wp_deregister_script( 'wp-embed' );
+});
+
 /**
  * Add custom style for admin
  */

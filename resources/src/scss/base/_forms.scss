@@ -88,6 +88,11 @@ input#callbacktime {
 	}
 }
 
+input[type='time']::-webkit-calendar-picker-indicator{
+	background-color: rgba(palette(white, base), 0.5);
+	border-radius: 100%;
+}
+
 /* Form 7 style */
 form.wpcf7-form {
 	position: relative;

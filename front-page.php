@@ -57,7 +57,7 @@
 							echo the_post_thumbnail_url(null, "small"); 
 						} else { 
 							echo the_post_thumbnail_url(null, "full"); 
-						} ?>" alt="" class="lazyload" />
+						} ?>" alt="Hydro Cyclone Grease removal unit details - FOG fellow designs LTD" class="lazyload" />
 					</a>
 				</div>
 			<?php endif; ?>
@@ -136,7 +136,8 @@
 											<?php endif; ?>
 										</div>
 										<div id="map" style="display:none" class="animated-modal">
-											<a href="<?php echo $map_image['url']; ?>" data-fancybox="image-map"><img src="<?php echo $map_image['url']; ?>" alt="<?php echo $map_image['alt']; ?>" /></a>
+											<a href="https://fogfellowdesigns.com"  target="_blank"><img src="<?php echo $map_image['url']; ?>" alt="<?php echo $map_image['alt']; ?>" /></a>
+											<a href="https://www.filta.co.uk" target="_blank"><div class="m-uk"></div></a>
 										</div>
 									</li>
 								</ul>

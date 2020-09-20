@@ -731,4 +731,28 @@ body.home {
 			}
 		}
 	}
+
+	#map {
+		width: 100%;
+		position: relative;
+
+		// a[data-fancybox="image-map"] {
+		// 	pointer-events: none;
+		// }
+
+		.m-uk {
+			background: transparent url(../../dist/img/i/map-marker.png) no-repeat;
+			position: absolute;
+			width: 4%;
+			height: 5%;
+			left: 47%;
+			bottom: 70%;
+			background-size: 65%;
+			transition: all 0.4s linear;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
 }
