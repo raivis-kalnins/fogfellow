@@ -956,6 +956,10 @@ input:focus {
 				&:nth-child(3)::before {
 					mask-image: url(../../dist/img/i/newspaper-regular.svg);
 				}
+
+				&:nth-child(4)::before {
+					mask-image: url(../../dist/img/i/download.svg);
+				}
 			}
 		}
 
