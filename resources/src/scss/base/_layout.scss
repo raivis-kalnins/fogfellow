@@ -235,7 +235,7 @@ input:focus {
 		#menu-hm {
 			display: none;
 			
-			@media (max-width: $desktop) {
+			@media (max-width: $tablet) {
 				display: block;
 			}
 			
@@ -260,7 +260,7 @@ input:focus {
 				}
 			}
 
-			@media (max-width: $desktop) {
+			@media (max-width: $tablet) {
 				position: relative;
 				width: 32px;
 				height: 32.5px;
@@ -311,7 +311,7 @@ input:focus {
 			position: relative;
 			z-index: 2;
 
-			@media (max-width: $desktop) {
+			@media (max-width: $tablet) {
 				background-color: rgba(palette(blue, base), 0.95);
 				height: 100vh;
 				padding-top: 40px;
@@ -319,9 +319,9 @@ input:focus {
 				overflow-y: auto;
 			}
 
-			@media (min-width: $desktop) {
-				display: inline-block;
-			}
+			// @media (min-width: $tablet) {
+			// 	display: inline-block;
+			// }
 
 			.navbar-end {
 				justify-content: center;
@@ -333,6 +333,11 @@ input:focus {
 					font-weight: $regular;
 					letter-spacing: 0.1rem;
 					transition: all 0.3s ease-out;
+
+					@media (max-width: $big-screen) {
+						margin-left: 0;
+						margin-right: 0;
+					}
 
 					@media (max-width: $desktop) {
 						width: fit-content;
