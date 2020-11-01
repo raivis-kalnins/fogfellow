@@ -225,3 +225,66 @@ body.blog {
 		margin: 0 auto 40px auto;
 	}
 }
+
+#pop-filta-video {
+	position: absolute;
+	width: 320px;
+	max-width: 90vw;
+	left: 50%;
+	margin-left: -160px;
+	top: 100px;
+	z-index: 3;
+}
+#pop-filta-video .button {
+
+	&--green {
+		max-width: none;
+		text-decoration: none;
+		font-size: 1.3em;
+		margin: 0 auto;
+		animation: color 5s linear infinite;
+
+		i {
+			position: relative;
+			display: block;
+			font-style: normal;
+			animation: text1 5s linear infinite;
+
+			&+br+i {
+				margin-top: -64px;
+				animation: text2 5s linear infinite;
+			}
+		}
+	}
+}
+
+@keyframes color {
+	0% {
+		background-color:#bfd730;
+		color:#130746;
+	}
+	50% {
+		background-color:#130746;
+		color:#bfd730;
+	}
+	100% {
+		background-color:#bfd730;
+		color:#130746;
+	}
+}
+
+@keyframes text1 {
+	0%{opacity:0}
+	10%{opacity:0}
+	50%{opacity:1}
+	90%{opacity:0}
+	100%{opacity:0}
+}
+
+@keyframes text2 {
+	0%{opacity:1}
+	10%{opacity:0}
+	50%{opacity:0}
+	90%{opacity:0}
+	100%{opacity:1}
+}

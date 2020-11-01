@@ -6,6 +6,7 @@
 	$home_diff = get_field( 'diff' ) ? get_field( 'diff' ) : get_field( 'diff', $home_id );
 	$map_image = get_field( 'map_img' ) ? get_field( 'map_img' ) : get_field( 'map_img', $home_id );
 ?>
+<div id="pop-filta-video"><a data-fancybox href="https://www.youtube.com/watch?v=Gxq8Jc9T7Yc?autoplay=1" class="button--green"><i>UK Distributor</i><br /><i>Filta Environmental</i></a></div>
 <section class="section full" id="home-slider">
 	<div class="full rellax bg-home" <?php if ( has_header_image() ) { ?> class="custom-background section" data-rellax-speed="5" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
 		<div class="wrap-video">
