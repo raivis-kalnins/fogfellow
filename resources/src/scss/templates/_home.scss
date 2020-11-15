@@ -228,63 +228,38 @@ body.blog {
 
 #pop-filta-video {
 	position: absolute;
-	width: 320px;
+	width: 300px;
 	max-width: 90vw;
-	left: 50%;
-	margin-left: -160px;
-	top: 100px;
-	z-index: 3;
-}
-#pop-filta-video .button {
+	left: 7px;
+	top: -50vh;
+	z-index: 5;
+	animation: slide-top 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
-	&--green {
-		max-width: none;
-		text-decoration: none;
-		font-size: 1.3em;
-		margin: 0 auto;
-		animation: color 5s linear infinite;
+	img {
+		border-radius: 8px;
+	}
 
-		i {
-			position: relative;
-			display: block;
-			font-style: normal;
-			animation: text1 5s linear infinite;
-
-			&+br+i {
-				margin-top: -64px;
-				animation: text2 5s linear infinite;
-			}
-		}
+	.fancybox-close-small {
+		right: 5px;
+		top: -10px;
+		background: palette(green,base);
+		border-radius: 100%;
+		padding: 2px;
+		width: 25px;
+		height: 25px;
+		z-index: 7;
+		animation: spinAround 5s;
 	}
 }
 
-@keyframes color {
+@keyframes slide-top {
 	0% {
-		background-color:#bfd730;
-		color:#130746;
-	}
-	50% {
-		background-color:#130746;
-		color:#bfd730;
+		transform: translateY(0);
+		opacity: 0;
 	}
 	100% {
-		background-color:#bfd730;
-		color:#130746;
+		transform: translateY(70vh);
+		opacity: 1;
 	}
 }
-
-@keyframes text1 {
-	0%{opacity:0}
-	10%{opacity:0}
-	50%{opacity:1}
-	90%{opacity:0}
-	100%{opacity:0}
-}
-
-@keyframes text2 {
-	0%{opacity:1}
-	10%{opacity:0}
-	50%{opacity:0}
-	90%{opacity:0}
-	100%{opacity:1}
-}
+  
