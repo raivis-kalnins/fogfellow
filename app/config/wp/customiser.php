@@ -6,6 +6,16 @@
  * @package dp
  */
 
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+	$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
+
 /**
  * Remove the additional CSS section, introduced in 4.7, from the Customizer.
  * https://robincornett.com/additional-css-wordpress-customizer/

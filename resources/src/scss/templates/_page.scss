@@ -42,4 +42,43 @@ body.page {
 			}
 		}
 	}
+
+	&.page-videos {
+
+		.pull-left {
+
+			nav+main {
+				border-right: 2px solid whitesmoke;
+			}
+
+			aside {
+				border-left: 0;
+			}
+		}
+
+		article {
+
+			li {
+				line-height: 2em;
+
+				&>a+a {
+					position: relative;
+					font-size: 0;
+
+					&::after {
+						content: "";
+						position: absolute;
+						margin: 8px 0;
+						width: 22px;
+						height: 16px;
+						mask-position: center;
+						mask-repeat: no-repeat;
+						mask-size: 100%;
+						background-color: red;
+						mask-image: url('../../dist/img/i/soc/youtube-square-brands.svg');
+					}
+				}
+			}
+		}
+	}
 }

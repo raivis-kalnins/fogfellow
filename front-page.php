@@ -138,7 +138,7 @@
 										</div>
 										<div id="id-maint" style="display:none" class="animated-modal">
 											<?php if ( ! empty( get_option( 'slide1' ) ) ) : ?>
-												<a href="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" data-fancybox="image-"><img src="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" alt="Daily Maintenance" /></a>
+												<a href="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" data-fancybox><img src="<?php echo wp_get_attachment_url( get_option( 'slide1' ) ); ?>" alt="Daily Maintenance" /></a>
 											<?php endif; ?>
 										</div>
 										<div id="map" style="display:none" class="animated-modal popup-map">

@@ -6,9 +6,20 @@
 		content: "";
 		display: block;
 		position: absolute;
-		margin-left: calc(4px - 1.5rem);
+		margin-left: calc(8px - 1.5rem);
 		width: 4px;
 		height: 100%;
+		border: solid palette(green, base);
 		border-radius: 2px;
+	}
+
+	cite {
+
+		a {
+			color: palette(blue, base);
+			font-weight: 700;
+			text-transform: uppercase;
+			font-style: normal;
+		}
 	}
 }
