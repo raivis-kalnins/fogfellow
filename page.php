@@ -1,27 +1,58 @@
-<?php get_header(); ?>
-	<main role="main" aria-label="Content">
-		<!-- section -->
-		<section>
-			<div class="h1-wrap"><h1><?php the_title(); ?></h1></div>
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div><?php the_content(); ?></div>
-				<?php // comments_template( '', true ); // Remove if you don't want comments ?>
-				<br class="clear">
-				<?php edit_post_link(); ?>
-			</article>
-			<!-- /article -->
-		<?php endwhile; ?>
+<?php 
+/**
+ * Pages
+ *
+ * @package    dp
+ * @author     Digital Pulse <hello@digitalpulse.click>
+ * @copyright  Digital Pulse
+ */
 
-		<?php else: ?>
-			<!-- article -->
-			<article>
-				<h2><?php _e( 'Sorry, nothing to display.', 'dp' ); ?></h2>
-			</article>
-			<!-- /article -->
-		<?php endif; ?>
-		</section>
-		<!-- /section -->
-	</main>
-<?php get_footer(); ?>
+get_header();
+while ( have_posts() ) :
+the_post();
+$background = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
+/**
+ * Get the stripe header.
+ */
+dp_get_template_part(
+	'/resources/partials/hero',
+	'',
+	array(
+		'background_image' => $background,
+	)
+);
+?>
+<section class="pull-up--half-desktop pull-left">
+	<div class="columns is-marginless mobile-reverse">
+		<div class="column is-full-tablet is-8-desktop is-paddingless">
+			<?php get_template_part( '/resources/partials/breadcrumbs' ); ?>
+			<main>
+				<header class="single--head head columns is-marginless is-vcentered">
+					<div class="is-paddingless column">
+						<h1 class="is-1 is-marginless"><?php esc_html_e( get_the_title() ); ?></h1>
+					</div>
+				</header>
+				<article class="head columns is-marginless">
+					<div class="single-content is-paddingless column is-full">
+						<?php the_content(); ?>
+						<?php edit_post_link(); // Always handy to have Edit Post Links available. ?>
+					</div>
+				</article>
+			</main>
+		</div>
+		<aside class="aside-toggle column is-4 is-flex with-margin">
+			<div class="aside-container">
+				<input class="hidden" type="checkbox" name="toggle-details" id="toggle-details" />
+				<label class="is-block" for="toggle-details">
+					<h3 class="aside-title">Other sections</h3>
+				</label>
+				<span class="aside-items">
+					<?php get_sidebar(); ?>
+				</span>
+			</div>
+		</aside>
+	</div>
+</section>
+<?php
+endwhile;
+get_footer();

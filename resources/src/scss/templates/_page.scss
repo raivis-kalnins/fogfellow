@@ -30,5 +30,16 @@ body.page {
 				}
 			}
 		}
+
+		.single-content {
+
+			li {
+
+				a {
+					color: palette(blue, base);
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 }

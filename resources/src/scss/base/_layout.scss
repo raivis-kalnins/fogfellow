@@ -329,9 +329,9 @@ input:focus {
 				.navbar-item {
 					text-transform: uppercase;
 					color: palette(white, base);
-					margin: 12px 0.5rem 12px 0.5rem;
+					margin: 12px 1px 12px 1px;
 					font-weight: $regular;
-					letter-spacing: 0.1rem;
+					letter-spacing: 0;
 					transition: all 0.3s ease-out;
 
 					@media (max-width: $big-screen) {

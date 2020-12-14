@@ -104,7 +104,7 @@ get_template_part( '/resources/partials/hero' );
 					$args = array(
 						'post_type'      => 'post',
 						'cat'            => 'news',
-						'posts_per_page' => 4,
+						'posts_per_page' => 20,
 						'offset'         => 3,
 					);
 					$loop = new WP_Query( $args );

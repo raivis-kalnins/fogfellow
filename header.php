@@ -60,7 +60,7 @@
 								else:
 									wp_nav_menu(
 										array(
-											'menu'        => 'Sidebar menu',
+											'menu'        => 'Pages menu',
 											'depth'       => 3,
 											'container'   => '',
 											'menu_class'  => '',
