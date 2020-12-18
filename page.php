@@ -22,6 +22,16 @@ dp_get_template_part(
 		'background_image' => $background,
 	)
 );
+$body_classes = get_body_class();
+
+if (in_array('page-distributors', $body_classes)) {
+
+?>
+<div id="fog-glob" style="position:absolute;right:15%;top:70px;z-index:-1">
+	<img src="https://fogfellowdesigns.com/wp-content/uploads/2020/12/glob.gif" alt="FOG Glob" style="opacity:0.8;transform: rotate(14deg) scale(1.1, 1.1);width:120%" />
+</div>
+<?php
+} else {}
 ?>
 <section class="pull-up--half-desktop pull-left">
 	<div class="columns is-marginless mobile-reverse">
