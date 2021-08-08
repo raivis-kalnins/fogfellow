@@ -311,6 +311,10 @@ body.home {
 					&>li {
 						margin-bottom: 70px;
 
+						@media (max-width: $tablet) {
+							margin-bottom: 200px;
+						}
+
 						ul {
 							list-style: none;
 							padding-left: 5px;
@@ -334,7 +338,11 @@ body.home {
 							}
 
 							&.is-8 {
-								padding: 35px;
+								padding: 5px 40px;
+
+								@media (max-width: $tablet) {
+									padding: 5px;
+								}
 							}
 						}
 					}
