@@ -110,7 +110,7 @@ body.home {
 			}
 		}
 
-		&.sc1 {
+		&.sc-about {
 			padding-top: 300px;
 			padding-bottom: 0;
 
@@ -270,41 +270,34 @@ body.home {
 			}
 		}
 
-		&.sc2, 
-		&.sc4 {
+		&.sc-news {
+			background-color: palette(white,base);
+			background-image: repeating-linear-gradient(-45deg, #f5f5f5, #f5f5f5 7px, #fff 0, #fff 12px);
 			min-height: 520px;
 			z-index: 2;
 
-			@include hero-bg(palette(grey, base));
+			//@include hero-bg(palette(blue, base));
 
 			h2 {
 				display: inline-block;
-
-				@include stroke(2, palette(blue, base));
+				color: palette(blue, base);
+				//@include stroke(1, palette(blue, base));
+				letter-spacing: 3px;
 			}
 		}
 
-		&.sc2.sc-products {
-			background-repeat: repeat;
-			background-size: contain;
-			background-position: center;
+		&.sc-products {
+			background: white;
 			width: 100%;
 			height: 100%;
 			padding: 40px;
 
-			@media (max-width: $tablet) {
-				margin-top: -785px;
-				min-height: 785px;
-
-				h2 {
-					padding-left: 0;
-				}
+			h2 {
+				color: palette(blue, base);
+				letter-spacing: 3px;
 			}
 
 			.bl-content {
-				background-color: palette(blue, base);
-				box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-				display: inline-block;
 				border-radius: 8px;
 
 				.tab-container {
@@ -315,36 +308,53 @@ body.home {
 					background: palette(white, base);
 					position: relative;
 
+					&>li {
+						margin-bottom: 70px;
+
+						ul {
+							list-style: none;
+							padding-left: 5px;
+						}
+					}
+
+					.columns {
+
+						.column {
+
+							img {
+								//border: palette(green, base) solid 2px;
+								box-shadow: palette(grey, base) 0 0 5px 2px;
+								transition: all 0.5s ease-out;
+								border-radius: 8px;
+								position: relative;
+							}
+
+							&:hover img {
+								box-shadow: 5px 3px 20px palette(grey, base);
+							}
+
+							&.is-8 {
+								padding: 35px;
+							}
+						}
+					}
+
 					.button--green {
-						width: 120px;
+						width: fit-content;
 						font-size: 0.8em;
-						padding: 5px 0;
+						padding: 5px 25px;
 						background: transparent;
 						color: palette(blue, base);
-						position: absolute;
+						position: relative;
+						float: left;
 						margin-bottom: 1.5rem;
+						margin-right: 15px;
 						bottom: 0;
 						cursor: pointer;
 
-						&.btn-desc-maint {
-							margin-left: 140px;
-							width: auto;
-							max-width: none;
-							padding: 5px 20px;
-
-							@media (max-width: $tablet) {
-								margin-left: 0;
-								margin-top: -10px;
-								margin-bottom: 60px;
-								width: 220px;
-								max-width: 220px;
-								padding: 5px 20px;
-							}
-						}
-
 						@media (max-width: $tablet) {
 							position: relative;
-							margin-left: 0;
+							margin: 15px auto;
 							width: 100%;
 						}
 
@@ -352,174 +362,23 @@ body.home {
 							background-color: palette(green, base);
 						}
 					}
-
-					.arrows {
-						display: block;
-						width: 60px;
-						font-size: 32px;
-						bottom: 1.5rem;
-						right: 0;
-						position: absolute;
-
-						@media (max-width: $tablet) {
-							bottom: 3rem;
-						}
-
-						label {
-							display: inline-block;
-							cursor: pointer;
-							color: palette(blue, base);
-							user-select: none;
-							margin-left: 5px;
-
-							&:hover {
-								color: palette(blue, base);
-							}
-
-							&.tab-0,
-							&.last {
-								color: palette(grey, base);
-								pointer-events: none;
-							}
-						}
-					}
-
-					.tab-content-container {
-						width: 100%;
-						height: 0;
-						opacity: 0;
-						top: 42px;
-						position: absolute;
-						overflow: hidden;
-						color: palette(blue, base);
-						font-weight: $regular;
-						line-height: 22px;
-						padding: 0 40px 0 20px;
-						background: palette(white, base);
-						border-bottom-left-radius: 4px;
-						border-bottom-right-radius: 4px;
-						border: 2px solid rgba(palette(white, base), 1);
-						box-shadow: 0 5px 5px -5px palette(black, base);
-
-						i {
-							font-style: normal;
-						}
-
-						p {
-							color: palette(blue, base);
-							font-weight: $regular;
-						}
-
-						.tab-content {
-							opacity: 0;
-							padding: 1.5rem;
-							min-height: 182px;
-							transition: opacity 0.1s ease-in;
-
-							.column {
-
-								&:first-child {
-
-									.image-box {
-										border: palette(green, base) solid 2px;
-										border-radius: 8px;
-										position: relative;
-										overflow: hidden;
-										width: 100%;
-										height: 218px;
-
-										@media (max-width: $tablet) {
-											height: 180px;
-										}
-
-										img {
-											transition: all 0.5s ease-out;
-											width: 100%;
-											height: 100%;
-											cursor: pointer;
-										}
-
-										&:hover {
-											
-											img {
-												position: absolute;
-												transform: scale(1.1);
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-
-					.tab {
-						outline: 0;
-						float: left;
-						cursor: pointer;
-						opacity: 1;
-						width: 15%;
-						line-height: 40px;
-						display: block;
-						margin: 0;
-						position: relative;
-						background: transparent;
-						color: palette(white, base);
-						text-transform: uppercase;
-						font-weight: $bold;
-						text-align: center;
-						border-top: 2px solid transparent;
-						border-right: 2px solid transparent;
-						transition: all 0.2s ease-out;
-
-						i {
-							display: none;
-						}
-
-						&:hover {
-							opacity: 0.9;
-						}
-					}
-
-					.tab-toggle {
-						display: none;
-
-						&.hover + .tab,
-						&.active + .tab,
-						&:checked + .tab {
-							color: palette(blue, base);
-							background-color: palette(white, base);
-							border-color: palette(white, base);
-							border-radius: 8px 8px 0 0;
-							opacity: 1;
-
-							//@include bg-h-to-top(palette(white, base), palette(grey, base));
-						}
-
-						&.hover ~ .tab-content-container,
-						&.active ~ .tab-content-container,
-						&:checked ~ .tab-content-container { 
-							height: auto;
-							opacity: 1;
-
-							.tab-content {
-								opacity: 1;
-
-								label {
-									opacity: 1;
-								}
-							}
-						}
-					}
 				}
 			}
 		}
 
-		&.sc3.sc-shop {
+		&.sc-shop {
+			background-color: palette(white,base);
+			background-image: repeating-linear-gradient(-45deg, #f5f5f5, #f5f5f5 7px, #fff 0, #fff 12px);
+
+			h2 {
+				color: palette(blue, base);
+				//@include stroke(1, palette(blue, base));
+				letter-spacing: 3px;
+			}
 
 			.bl-content {
 				overflow: hidden;
 			}
-
 
 			.show-cart li {
 				display: flex;
@@ -574,7 +433,7 @@ body.home {
 			}
 		}
 
-		&.sc4.sc-news {
+		&.sc-news {
 
 			.bl-content .card {
 
@@ -829,4 +688,22 @@ body.home {
 			display: block;
 		}
 	}
+}
+
+/* Temp custom fix */
+body.home .d-container .diagonal--left,
+body.home .bg-home img.logo-c,
+h1.rellax {
+	display: none !important;
+}
+
+body.home .bg-home::after {
+	background: transparent !important;
+}
+
+body.home section.sc1::before {
+	top: 250px !important;
+}
+body.home .bg-home .wrap-video {
+	background-color: white;
 }

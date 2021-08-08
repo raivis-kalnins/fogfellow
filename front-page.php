@@ -6,12 +6,14 @@
 	$home_diff = get_field( 'diff' ) ? get_field( 'diff' ) : get_field( 'diff', $home_id );
 	$map_image = get_field( 'map_img' ) ? get_field( 'map_img' ) : get_field( 'map_img', $home_id );
 ?>
+<?php /*
 <div id="pop-filta-video">
 	<a data-fancybox href="https://www.youtube.com/watch?v=Gxq8Jc9T7Yc?autoplay=1" class="pop-advert">
 		<img src="<?php echo get_template_directory_uri(); ?>/resources/dist/img/bg/UK-distributor.png" alt="UK distributor" />
 	</a>
 	<button type="button" data-fancybox-close="" class="fancybox-button fancybox-close-small" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
 </div>
+*/ ?>
 <section class="section full" id="home-slider">
 	<div class="full rellax bg-home" <?php if ( has_header_image() ) { ?> class="custom-background section" data-rellax-speed="5" style="background-image: url('<?php if(is_front_page()) { echo esc_url(get_header_image()); } ?>');" <?php } ?>>
 		<div class="wrap-video">
@@ -83,7 +85,48 @@
 		?>)"></span>
 	</div>
 </div>
-<section class="section sc-products sc2" id="products">
+<section class="section sc-news sc2" id="news">
+	<div class="container">
+		<h2>Blog news</h2>
+		<div class="bl-content columns">
+		<?php
+					$args = array(
+						'post_type'      => 'post',
+						'cat'            => 'news',
+						'posts_per_page' => 4,
+					);
+					$loop = new WP_Query( $args );
+					if ( have_posts() ) :
+					while ( $loop->have_posts() ) :
+							$loop->the_post();
+							$background = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
+							?>
+				<div class="column is-full-mobile is-half-tablet is-half-desktop">
+					<article class="card card--related all-news faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
+						<div class="thumbnail" style="background-image:url( 
+								<?php
+								if ( $background ) {
+									echo $background; }
+								?>
+							)"></div>
+							<div class="main has-color-black has-background-white">
+								<time datetime="<?php echo get_the_date( 'F-jS-Y' ); ?>"><span class="is-8 has-text-weight-light"><?php echo get_the_date( 'F jS Y' ); ?></span></time>
+								<h4 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h4>
+								<span><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
+								<p class="read-more">Read More</p>
+							</div>
+						<a href="<?php the_permalink(); ?>" class="faux-link__overlay-link"></a>
+					</article>
+				</div>
+								<?php
+				endwhile;
+					wp_reset_query();
+					endif;
+				?>
+		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/news" title="news">All news</a>
+	</div>
+</section>
+<section class="section sc-products sc3" id="products">
 	<div class="container columns">
 		<div class="column">
 			<h2>Products</h2>
@@ -106,8 +149,8 @@
 							$n = $i++;
 							?>
 							<li>
-								<input class="tab-toggle" id="tab-<?php echo $n; ?>" type="radio" name="toggle" <?php if( $n == 1) { echo 'checked'; } ?> /> 
-								<label data-title="Tab <?php echo $n; ?>" class="tab" for="tab-<?php echo $n; ?>"><?php echo $title; ?></label>            
+								<?php /* <input class="tab-toggle" id="tab-<?php echo $n; ?>" type="radio" name="toggle" <?php if( $n == 1) { echo 'checked'; } ?> /> 
+								<label data-title="Tab <?php echo $n; ?>" class="tab" for="tab-<?php echo $n; ?>"><?php echo $title; ?></label> */ ?>    
 								<ul class="tab-content-container">
 									<li class="tab-content columns">
 										<div class="column is-full-tablet is-4">
@@ -121,10 +164,12 @@
 											<?php _e( sb_truncate( $content, 740 ) ); ?>
 											<a href="javascript:;" data-fancybox data-src="#id-<?php echo $n; ?>" class="button--green btn-desc-<?php echo $n; ?>" data-animation-duration="700">Read more</a>
 											<a href="javascript:;" data-fancybox data-src="#id-maint" class="button--green btn-desc-maint" data-animation-duration="700">Daily Maintenance</a>
+											<?php /*
 											<div class="arrows">
 												<label class="back tab-<?php echo $n - 1; ?>" for="tab-<?php echo $n - 1; ?>">&#8249;</label>
 												<label class="next tab-<?php echo $n + 1; if( $n == $rowCount) { echo ' last'; } ?>" for="tab-<?php echo $n + 1; ?>">&#8250;</label>   
 											</div>
+											*/ ?>
 										</div>
 										<?php /* Popup content */ ?>
 										<div id="id-<?php echo $n; ?>" style="display:none" class="animated-modal">
@@ -166,7 +211,7 @@
 		</div>
 	</div>
 </section>
-<section class="section sc-shop sc3" id="shop">
+<section class="section sc-shop sc4" id="shop">
 	<div class="container">
 		<h2>Store</h2>
 		<div class="bl-content columns swiper-container">
@@ -212,47 +257,6 @@
 			<div class="swiper-button-next swiper-button-white"></div>
 		</div>
 		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/shop" title="Shop">All products</a>
-	</div>
-</section>
-<section class="section sc-news sc4" id="news">
-	<div class="container">
-		<h2>Blog news</h2>
-		<div class="bl-content columns">
-		<?php
-					$args = array(
-						'post_type'      => 'post',
-						'cat'            => 'news',
-						'posts_per_page' => 4,
-					);
-					$loop = new WP_Query( $args );
-					if ( have_posts() ) :
-					while ( $loop->have_posts() ) :
-							$loop->the_post();
-							$background = get_the_post_thumbnail_url( get_the_ID(), 'hd' );
-							?>
-				<div class="column is-full-mobile is-half-tablet is-half-desktop">
-					<article class="card card--related all-news faux-link__element" title="<?php echo esc_attr( get_the_title() ); ?>">
-						<div class="thumbnail" style="background-image:url( 
-								<?php
-								if ( $background ) {
-									echo $background; }
-								?>
-							)"></div>
-							<div class="main has-color-black has-background-white">
-								<time datetime="<?php echo get_the_date( 'F-jS-Y' ); ?>"><span class="is-8 has-text-weight-light"><?php echo get_the_date( 'F jS Y' ); ?></span></time>
-								<h4 class="is-4"><?php esc_html_e( sb_truncate( get_the_title(), 40 ) ); ?></h4>
-								<span><?php esc_html_e( sb_truncate( get_the_excerpt(), 54 ) ); ?></span>
-								<p class="read-more">Read More</p>
-							</div>
-						<a href="<?php the_permalink(); ?>" class="faux-link__overlay-link"></a>
-					</article>
-				</div>
-								<?php
-				endwhile;
-					wp_reset_query();
-					endif;
-				?>
-		<a class="btn button--green btn-more" href="<?php echo get_home_url(); ?>/news" title="news">All news</a>
 	</div>
 </section>
 <?php get_footer(); ?>
