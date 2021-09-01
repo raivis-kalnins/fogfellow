@@ -6,6 +6,28 @@ body.home {
 		background-color: palette(blue, base);
 	}
 
+	.d-container .diagonal--left,
+	.bg-home img.logo-c,
+	h1.rellax {
+		display: none !important;
+	}
+
+	.bg-home::after {
+		background: transparent !important;
+	}
+
+	section.sc1::before {
+		top: 250px !important;
+	}
+
+	.bg-home .wrap-video {
+		background-color: white;
+
+		video {
+			width: 100vw;
+		}
+	}
+
 	img {
 	
 		&.fancybox-image {
@@ -697,22 +719,4 @@ body.home {
 			display: block;
 		}
 	}
-}
-
-/* Temp custom fix */
-body.home .d-container .diagonal--left,
-body.home .bg-home img.logo-c,
-h1.rellax {
-	display: none !important;
-}
-
-body.home .bg-home::after {
-	background: transparent !important;
-}
-
-body.home section.sc1::before {
-	top: 250px !important;
-}
-body.home .bg-home .wrap-video {
-	background-color: white;
 }
